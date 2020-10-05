@@ -4,8 +4,4 @@ dist
 .nuxt
 coverage
 
-# Plugin
-lib/plugin.js
-lib/templates/*.js
-
 docs/static/sw.js

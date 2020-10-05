@@ -1,7 +1,8 @@
 ---
 title: Introduction
-description: ''
+description: 'A simple plugin to install snipcart'
 position: 1
+categoryPosition: 1
 category: ''
 features:
   - init snipcart properly
