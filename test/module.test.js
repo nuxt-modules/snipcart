@@ -19,7 +19,5 @@ describe('module', () => {
       '<link data-n-head="ssr" rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.22/default/snipcart.css">' +
       '<script data-n-head="ssr" src="https://cdn.snipcart.com/themes/v3.0.22/default/snipcart.js" async></script>'
     )
-
-    expect(html).toContainer('id="snipcart" class="snipcart"')
   })
 })
