@@ -15,9 +15,9 @@ features:
 
 [Snipcart module](https://docs.snipcart.com/v3/setup/installation) for [NuxtJS](https://nuxtjs.org).
 
-Welcome to @nuxt/snipcart
+Welcome to @nuxtjs/snipcart
 
-A simple plugin to install snipcart to init project with `@nuxt/snipcart` module.
+A simple plugin to install snipcart to init project with `@nuxtjs/snipcart` module.
 
 ## Features
 

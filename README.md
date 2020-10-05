@@ -1,4 +1,4 @@
-# @nuxt/snipcart
+# @nuxtjs/snipcart
 
 ## Setup
 
