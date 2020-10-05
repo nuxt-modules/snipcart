@@ -33,6 +33,7 @@ describe('Snipcart', () => {
     })
 
     cy.wait("@apiCheck");
+    cy.wait(1000)
 
     cy.get('html').then((el) => {
       const html = el[0].innerHTML;
