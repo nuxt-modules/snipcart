@@ -8,8 +8,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * adding add product behavior + cypress test + update example ([94f9ec1](https://github.com/f3ltron/nuxt-snipcart/commit/94f9ec171057863295cdceb88ea79de4796edb20))
-* adding add product behavior + cypress test + update example ([91b3fb7](https://github.com/f3ltron/nuxt-snipcart/commit/91b3fb7ce7fe2904060fe07ebfb3729d2a94977a))
-* adding add product behavior + cypress test + update example ([cf64263](https://github.com/f3ltron/nuxt-snipcart/commit/cf6426383215a96ba6497f07e7894c002f88eb3f))
+
 
 ### [0.0.6](https://github.com/f3ltron/nuxt-snipcart/compare/v0.0.5...v0.0.6) (2020-10-05)
 
