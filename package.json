@@ -18,7 +18,7 @@
     "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
     "version": "standard-version",
-    "test": "yarn lint && jest"
+    "test": "yarn lint && cd example && yarn cypress:run"
   },
   "dependencies": {
     "@nuxt/content-theme-docs": "^0.6.0",
@@ -36,10 +36,8 @@
     "@nuxtjs/eslint-config": "latest",
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
-    "babel-jest": "latest",
     "eslint": "latest",
     "husky": "latest",
-    "jest": "latest",
     "standard-version": "latest"
   }
 }
