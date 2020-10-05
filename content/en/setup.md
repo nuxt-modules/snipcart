@@ -1,6 +1,6 @@
 ---
 title: Setup
-description: ''
+description: 'Setup configuration'
 position: 2
 category: Guide
 ---
@@ -37,8 +37,9 @@ Then, add `@nuxtjs/snipcart` to the `modules` section of `nuxt.config.js`:
   ],
   snipcart: {
     // Options
-    snipcartVersion: /* not required default value is v3.0.22 */
-    snipcartKey: /* required https://app.snipcart.com/dashboard/account/credentials */
+    snipcartVersion: /* not required default value is v3.0.22 */,
+    snipcartKey: /* required https://app.snipcart.com/dashboard/account/credentials */,
+    addProductBehavior: /* not required default false */
   }
 }
 ```

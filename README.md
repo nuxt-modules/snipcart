@@ -93,5 +93,4 @@ Maintained by [Florent Giraud](https://github.com/f3ltron)
 
 ## TODO
 
-Add data-config-add-product-behavior functionnality
 Publish to npm
