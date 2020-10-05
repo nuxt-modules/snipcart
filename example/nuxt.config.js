@@ -6,6 +6,6 @@ module.exports = {
   srcDir: __dirname,
   buildModules: [{ handler: require('../') }],
   snipcart: {
-    snipcart_key: 'asdad'
+    snipcartKey: 'asdad'
   }
 }

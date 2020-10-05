@@ -24,20 +24,18 @@ describe('Snipcart', () => {
         .contain(
           '<link data-n-head="ssr" rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.22/default/snipcart.css">'
       );
-
-      chai
-        .expect(html)
-        .contain('<div hidden="" id="snipcart" data-api-key="asdad"></div><script src="https://cdn.snipcart.com/themes/v3.0.22/default/snipcart.js"></script>')
-
     })
 
     cy.wait(1000);
+
     cy.get('html').then((el) => {
       const html = el[0].innerHTML;
 
       chai
         .expect(html)
-        .contain('<div id="snipcart" class="snipcart">')
+        .contain('<script src="https://cdn.snipcart.com/themes/v3.0.22/default/snipcart.js"></script>');
+
+      chai.expect(html).contain('<div id="snipcart" class="snipcart">');
     })
   })
 })

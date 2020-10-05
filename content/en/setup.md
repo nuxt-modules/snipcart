@@ -37,8 +37,8 @@ Then, add `@nuxtjs/snipcart` to the `modules` section of `nuxt.config.js`:
   ],
   snipcart: {
     // Options
-    snipcart_version: /* not required default value is v3.0.22 */
-    snipcart_key: /* required https://app.snipcart.com/dashboard/account/credentials */
+    snipcartVersion: /* not required default value is v3.0.22 */
+    snipcartKey: /* required https://app.snipcart.com/dashboard/account/credentials */
   }
 }
 ```

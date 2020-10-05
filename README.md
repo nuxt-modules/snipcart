@@ -53,7 +53,7 @@ Or a separate section `snipcart` for module options:
     '@nuxtjs/snipcart',
   ],
   snipcart: {
-    snipcart_key: '<your-snipcart-key>',
+    snipcartKey: '<your-snipcart-key>',
     /* all other options */
   }
 }
