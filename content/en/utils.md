@@ -1,37 +1,45 @@
+---
+title: Utils
+description: 'Snipcart utils'
+position: 3
+category: Guide
+---
+
+Check the [snipcart products documentation](https://docs.snipcart.com/v3/setup/products) for more information about custom fields.
+
+## CustomFields
+
+You will have access to the `$snipcart.customfields` function in your project. It will help you bind custom fields from your product.
+
+<alert type="warning">
+  We are transforming the data for `v-bind`. We are not performing any tests.
+  You have to handle the transformation of your data in respect to the [snipcart documentation](https://docs.snipcart.com/v3/setup/products).
+</alert>
+
+### Usage
+
+You can check out our [example](https://github.com/f3ltron/nuxt-snipcart/tree/master/example).
+
+<alert type="info">
+  You can access the utils functions anywhere in your app. For example, `asyncData`, `mounted`, `vuex`, etc.
+</alert>
+
+```vue
 <template>
   <div>
-    Items Number : <span class="snipcart-items-count" />
-    Items price: <span class="snipcart-total-price" />
     <button
       class="snipcart-add-item"
-      :data-item-id="product.id"
-      :data-item-price="product.price"
-      :data-item-url="product.storeUrl"
-      :data-item-description="product.description"
-      :data-item-name="product.title"
       v-bind="$snipcart.customfields(product.customFields)"
     >
       Add to cart
-    </button>
-    <button class="snipcart-checkout">
-      Click here to checkout
     </button>
   </div>
 </template>
 
 <script>
 export default {
-  asyncData (context) {
-    // console.log(context.app.$snipcart)
-  },
   data: () => ({
     product: {
-      id: 42,
-      price: 42,
-      storeUrl: 'http://localhost:3000',
-      title: 'awesome nuxt title',
-      description: 'awesome nuxt description',
-      // https://docs.snipcart.com/v3/setup/products#1-dropdown
       customFields: [
         // dropdown
         {
@@ -75,9 +83,13 @@ export default {
           name: 'Engraving',
           placeholder: 'ex: John Doe'
         }
-
       ]
     }
   })
+  asyncData(context) {
+    console.log(context.app.$snipcart)
+  }
 }
 </script>
+
+```

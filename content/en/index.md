@@ -5,9 +5,9 @@ position: 1
 categoryPosition: 1
 category: ''
 features:
-  - init snipcart properly
-  - Specify the version you want to use
-  - Disable product behavior on demand
+  - init snipcart easily
+  - Easy customize any part of snipcart
+  - product utils to bind your custom fields based on snipcart documentation
 ---
 
 <img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
@@ -17,7 +17,7 @@ features:
 
 Welcome to @nuxtjs/snipcart
 
-A simple plugin to install snipcart to init project with `@nuxtjs/snipcart` module.
+A simple plugin to init snipcart with `@nuxtjs/snipcart` module.
 
 ## Features
 

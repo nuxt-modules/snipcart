@@ -10,6 +10,10 @@ describe("Snipcart", () => {
     }).as("apiCheck");
 
     cy.wait('@apiCheck')
+
+    cy.get('[data-item-custom1-name="Frame color"]').should('exist')
+    cy.get('[data-item-custom5-name="Readonly information"]').should('exist')
+
     cy.get(".snipcart-add-item").trigger("click");
 
     cy.get(".snipcart-modal__container").should('exist');
