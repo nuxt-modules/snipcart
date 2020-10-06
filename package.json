@@ -14,7 +14,7 @@
   "main": "lib/module.js",
   "scripts": {
     "dev": "cd docs && yarn dev",
-    "generate": "cd docs && yarn generate",
+    "generate": "cd docs && yarn && yarn generate",
     "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
     "version": "standard-version",
