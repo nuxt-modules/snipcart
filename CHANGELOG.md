@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/f3ltron/nuxt-snipcart/compare/v0.0.8...v0.0.9) (2020-10-06)
+
+
+### Features
+
+* add config for localize + override ui component from snipcart + manually set lang ([c506cc1](https://github.com/f3ltron/nuxt-snipcart/commit/c506cc157a6461c2d2b7a0c79ffaefdcda1a572d))
+
 ### [0.0.8](https://github.com/f3ltron/nuxt-snipcart/compare/v0.0.7...v0.0.8) (2020-10-06)
 
 
