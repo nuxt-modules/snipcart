@@ -13,8 +13,8 @@
   ],
   "main": "lib/module.js",
   "scripts": {
-    "dev": "nuxt",
-    "generate": "nuxt generate",
+    "dev": "cd docs && yarn dev",
+    "generate": "cd docs && yarn generate",
     "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
     "version": "standard-version",

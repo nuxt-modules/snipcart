@@ -6,6 +6,5 @@
     "dark": "/logo-dark.svg"
   },
   "github": "f3ltron/nuxt-snipcart",
-  "twitter": "giraud_florent",
-  "defaultDir": "."
+  "twitter": "giraud_florent"
 }
