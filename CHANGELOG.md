@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/f3ltron/nuxt-snipcart/compare/v0.0.7...v0.0.8) (2020-10-06)
+
+
+### Features
+
+* adding custom fields util + cypress test on it + update doc ([aff111d](https://github.com/f3ltron/nuxt-snipcart/commit/aff111decde954f30c2eaf15234ccaf019893aae))
+
 ### [0.0.7](https://github.com/f3ltron/nuxt-snipcart/compare/v0.0.6...v0.0.7) (2020-10-05)
 
 
