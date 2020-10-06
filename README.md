@@ -12,9 +12,9 @@
 
 ## Features
 
-- init snipcart properly
-- Specify the version you want to use
-- Disable product behavior on demand
+- init snipcart easily
+- Easy customize any part of snipcart
+- product utils to bind your custom fields based on snipcart documentation
 
 [📖 &nbsp;Read more](https://nuxt-snipcart.netlify.app/)
 
