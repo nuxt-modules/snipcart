@@ -17,6 +17,8 @@ describe("Snipcart", () => {
     cy.get(".snipcart-add-item").trigger("click");
 
     cy.get(".snipcart-modal__container").should('exist');
+
+    cy.get(".bg-red").should('exist');
   });
 });
 

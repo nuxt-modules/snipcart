@@ -93,3 +93,39 @@ export default {
 </script>
 
 ```
+
+
+## setLanguage
+
+See more about localization in our [customization part](customization#customize-locales).
+
+By default snipcart will check for html lang variable so please consider to use it instead before using this utils.
+
+You have access to `$snipcart.setLanguage`. It should be only executed on front. You will have an error if you try to execute it from the server.
+
+### Usage
+
+```vue
+
+<template>
+  <div>
+    <button class="switch-lang" @click="switchLang">
+      switch Lang
+    </button>
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    switchLang () {
+      this.lang = this.lang === 'fr' ? 'en' : 'fr'
+      this.$snipcart.setLanguage(this.lang)
+    }
+  }
+}
+</script>
+
+```
+
+checkout our [example](https://github.com/f3ltron/nuxt-snipcart/tree/master/example) repo for more informations

@@ -16,6 +16,10 @@
     <button class="snipcart-checkout">
       Click here to checkout
     </button>
+
+    <button class="switch-lang" @click="switchLang">
+      switch Lang
+    </button>
   </div>
 </template>
 
@@ -25,6 +29,7 @@ export default {
     // console.log(context.app.$snipcart)
   },
   data: () => ({
+    lang: 'fr',
     product: {
       id: 42,
       price: 42,
@@ -78,6 +83,12 @@ export default {
 
       ]
     }
-  })
+  }),
+  methods: {
+    switchLang () {
+      this.lang = this.lang === 'fr' ? 'en' : 'fr'
+      this.$snipcart.setLanguage(this.lang)
+    }
+  }
 }
 </script>

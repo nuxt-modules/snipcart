@@ -1,12 +1,27 @@
-const { resolve } = require('path')
+import { resolve, join } from 'path'
+import myModule from '../'
 
-module.exports = {
+export default {
   rootDir: resolve(__dirname, '..'),
   buildDir: resolve(__dirname, '.nuxt'),
   srcDir: __dirname,
-  buildModules: [{ handler: require('../') }],
+  buildModules: [{ handler: myModule }],
   snipcart: {
-    snipcartKey: process.env.snipcartKey
+    snipcartKey: process.env.snipcartKey,
+    snipcartCustomize: join(__dirname, './snipcart/customize'),
+    locales: {
+      fr: {
+        cart_summary: {
+          total: 'Total fr'
+        }
+      },
+      en: {
+        cart_summary: {
+          total: 'Total en'
+        }
+      }
+    }
     // addProductBehavior: false,
-  }
+  },
+  css: ['~/snipcart/customize.css']
 }

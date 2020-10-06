@@ -8,6 +8,9 @@ features:
   - init snipcart easily
   - Easy customize any part of snipcart
   - product utils to bind your custom fields based on snipcart documentation
+  - customize locale variable from snipcart
+  - possiblity to change locale manually
+  - customize component ui from snipcart
 ---
 
 <img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>

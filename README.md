@@ -9,12 +9,14 @@
 > [Snipcart](https://docs.snipcart.com/v3/setup/installation) integration with for [NuxtJS](https://nuxtjs.org)
 
 
-
 ## Features
 
 - init snipcart easily
 - Easy customize any part of snipcart
 - product utils to bind your custom fields based on snipcart documentation
+- customize locale variable from snipcart
+- possiblity to change locale manually
+- customize component ui from snipcart
 
 [📖 &nbsp;Read more](https://nuxt-snipcart.netlify.app/)
 
