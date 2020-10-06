@@ -21,9 +21,7 @@
     "test": "yarn lint && cd example && yarn cypress:run"
   },
   "dependencies": {
-    "@nuxt/content-theme-docs": "^0.6.0",
-    "consola": "^2.15.0",
-    "nuxt": "^2.14.5"
+    "consola": "^2.15.0"
   },
   "publishConfig": {
     "access": "public"
@@ -38,6 +36,7 @@
     "babel-eslint": "latest",
     "eslint": "latest",
     "husky": "latest",
+    "nuxt": "^2.14.5",
     "standard-version": "latest"
   }
 }
