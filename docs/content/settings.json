@@ -5,6 +5,6 @@
     "light": "/logo-light.svg",
     "dark": "/logo-dark.svg"
   },
-  "github": "f3ltron/nuxt-snipcart",
+  "github": "nuxt-community/nuxt-snipcart",
   "twitter": "giraud_florent"
 }

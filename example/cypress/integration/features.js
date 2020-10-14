@@ -10,9 +10,12 @@ describe("Snipcart", () => {
     }).as("apiCheck");
 
     cy.wait('@apiCheck')
+    cy.wait(1000)
 
     cy.get('[data-item-custom1-name="Frame color"]').should('exist')
     cy.get('[data-item-custom5-name="Readonly information"]').should('exist')
+    cy.get('[data-item-name="awesome nuxt title"]').should('exist')
+    cy.get('[data-item-description="awesome nuxt description"]').should('exist')
 
     cy.get(".snipcart-add-item").trigger("click");
 

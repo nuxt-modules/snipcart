@@ -1,9 +1,8 @@
 # @nuxtjs/snipcart
 
-<!-- [![npm version][npm-version-src]][npm-version-href] -->
-<!-- [![npm downloads][npm-downloads-src]][npm-downloads-href] -->
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
-[![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
 > [Snipcart](https://docs.snipcart.com/v3/setup/installation) integration with for [NuxtJS](https://nuxtjs.org)
@@ -11,12 +10,12 @@
 
 ## Features
 
-- init snipcart easily
-- Easy customize any part of snipcart
-- product utils to bind your custom fields based on snipcart documentation
-- customize locale variable from snipcart
-- possiblity to change locale manually
-- customize component ui from snipcart
+- Init snipcart smoothly
+- Easy customization
+- Product utils based on snipcart documentation
+- Customize snipcart internationalization
+- Possiblity to set snipcart lang manually
+- Customize snipcart ui component
 
 [📖 &nbsp;Read more](https://nuxt-snipcart.netlify.app/)
 
@@ -78,21 +77,17 @@ Copyright (c)
 Maintained by [Florent Giraud](https://github.com/f3ltron)
 
 <!-- Badges -->
-<!-- [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/snipcart/latest.svg -->
-<!-- [npm-version-href]: https://npmjs.com/package/@nuxtjs/snipcart -->
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/snipcart/latest.svg
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/snipcart
 
-<!-- [npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/snipcart.svg -->
-<!-- [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/snipcart -->
+[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/snipcart.svg
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/snipcart
 
-<!-- [github-actions-ci-src]: https://github.com/nuxt-community/snipcart-module/workflows/ci/badge.svg -->
-<!-- [github-actions-ci-href]: https://github.com/nuxt-community/snipcart-module/actions?query=workflow%3Aci -->
+[github-actions-ci-src]: https://github.com/nuxt-community/snipcart-module/workflows/ci/badge.svg
+[github-actions-ci-href]: https://github.com/nuxt-community/snipcart-module/actions?query=workflow%3Aci
 
-<!-- [codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/snipcart-module.svg -->
-<!-- [codecov-href]: https://codecov.io/gh/nuxt-community/snipcart-module -->
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/snipcart-module.svg
+[codecov-href]: https://codecov.io/gh/nuxt-community/snipcart-module
 
-<!-- [license-src]: https://img.shields.io/npm/l/@nuxtjs/snipcart.svg -->
-<!-- [license-href]: https://npmjs.com/package/@nuxtjs/snipcart -->
-
-## TODO
-
-Publish to npm
+[license-src]: https://img.shields.io/npm/l/@nuxtjs/snipcart.svg
+[license-href]: https://npmjs.com/package/@nuxtjs/snipcart
