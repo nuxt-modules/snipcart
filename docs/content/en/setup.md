@@ -40,8 +40,8 @@ Then, add `@nuxtjs/snipcart` to the `modules` section of `nuxt.config.js`:
     snipcartVersion: /* not required default value is v3.0.22 */,
     snipcartKey: /* required https://app.snipcart.com/dashboard/account/credentials */,
     addProductBehavior: /* not required default false */,
-    locales: {} /* not required */ ,
-    snipcartCustomize: '' /* not required should be absolute path*/
+    locales: {} /* not required */,
+    snipcartCustomize: '' /* not required should be absolute path */
   }
 }
 ```

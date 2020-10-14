@@ -12,8 +12,10 @@ Check the [snipcart products documentation](https://docs.snipcart.com/v3/setup/p
 You will have access to the `$snipcart.customfields` function in your project. It will help you bind custom fields from your product.
 
 <alert type="warning">
+
   We are transforming the data for `v-bind`. We are not performing any tests.
   You have to handle the transformation of your data in respect to the [snipcart documentation](https://docs.snipcart.com/v3/setup/products).
+
 </alert>
 
 ### Usage
@@ -21,7 +23,9 @@ You will have access to the `$snipcart.customfields` function in your project. I
 You can check out our [example](https://github.com/f3ltron/nuxt-snipcart/tree/master/example).
 
 <alert type="info">
+
   You can access the utils functions anywhere in your app. For example, `asyncData`, `mounted`, `vuex`, etc.
+
 </alert>
 
 ```vue
@@ -91,7 +95,6 @@ export default {
   }
 }
 </script>
-
 ```
 
 
@@ -106,7 +109,6 @@ You have access to `$snipcart.setLanguage`. It should be only executed on front.
 ### Usage
 
 ```vue
-
 <template>
   <div>
     <button class="switch-lang" @click="switchLang">
@@ -125,7 +127,6 @@ export default {
   }
 }
 </script>
-
 ```
 
 checkout our [example](https://github.com/f3ltron/nuxt-snipcart/tree/master/example) repo for more informations
