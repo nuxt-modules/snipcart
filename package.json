@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/snipcart",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "snipcart module for nuxt",
   "license": "MIT",
   "files": [
