@@ -13,12 +13,12 @@ You will have access to the `$snipcart.customfields` function in your project. I
 
 <alert type="warning">
   We are transforming the data for `v-bind`. We are not performing any tests.
-  You have to handle the transformation of your data in respect to the [snipcart documentation](https://docs.snipcart.com/v3/setup/products).
+  You have to handle the transformation of your data in respect to the snipcart documentation.
 </alert>
 
 ### Usage
 
-You can check out our [example](https://github.com/f3ltron/nuxt-snipcart/tree/master/example).
+You can check out our [example](https://github.com/nuxt-community/nuxt-snipcart/tree/master/example).
 
 <alert type="info">
   You can access the utils functions anywhere in your app. For example, `asyncData`, `mounted`, `vuex`, etc.
@@ -128,4 +128,55 @@ export default {
 
 ```
 
-checkout our [example](https://github.com/f3ltron/nuxt-snipcart/tree/master/example) repo for more informations
+checkout our [example](https://github.com/nuxt-community/nuxt-snipcart/tree/master/example) repo for more informations
+
+
+## bindProduct
+
+You can add informations by default with snipcart by yourself.
+
+```html
+<button
+  class="snipcart-add-item"
+  v-bind="$snipcart.customfields(product.customFields)"
+  :data-item-id="product.id"
+  :data-item-price="product.price"
+  :data-item-url="product.storeUrl"
+  :data-item-description="product.description"
+  :data-item-name="product.title"
+>
+  Add to cart
+</button>
+```
+Or you can use the utils do the job for you.
+
+<alert type="warning">
+  We are transforming the data for `v-bind`. We are not performing any tests.
+  You have to handle the transformation of your data in respect to the snipcart documentation.
+</alert>
+
+### Usage
+
+```html
+<button
+  class="snipcart-add-item"
+  v-bind="{
+    ...$snipcart.customfields(product.customFields),
+    ...$snipcart.bindProduct(product)
+  }"
+>
+  Add to cart
+</button>
+```
+
+or without custom fields
+
+```html
+<button
+  class="snipcart-add-item"
+  v-bind="$snipcart.bindProduct(product)"
+>
+  Add to cart
+</button>
+```
+

@@ -13,30 +13,32 @@
   ],
   "main": "lib/module.js",
   "scripts": {
-    "dev": "cd docs && yarn dev",
-    "generate": "cd docs && yarn && yarn generate",
+    "docs": "nuxt docs",
+    "example": "nuxt example",
+    "generate": "nuxt generate docs",
+    "start": "nuxt start docs",
     "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
     "version": "standard-version",
     "test": "yarn lint && cd example && yarn cypress:run"
   },
-  "dependencies": {
-    "consola": "^2.15.0"
-  },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
+    "consola": "^2.15.0",
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
+    "@nuxt/content-theme-docs": "^0.7.2",
     "@nuxtjs/eslint-config": "latest",
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
     "eslint": "latest",
     "husky": "latest",
     "nuxt": "^2.14.5",
+    "nuxt-ackee": "^2.0.0",
     "standard-version": "latest"
   }
 }

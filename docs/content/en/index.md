@@ -5,12 +5,12 @@ position: 1
 categoryPosition: 1
 category: ''
 features:
-  - init snipcart easily
-  - Easy customize any part of snipcart
-  - product utils to bind your custom fields based on snipcart documentation
-  - customize locale variable from snipcart
-  - possiblity to change locale manually
-  - customize component ui from snipcart
+  - Init snipcart smoothly
+  - Easy customization
+  - Product utils based on snipcart documentation
+  - Customize snipcart internationalization
+  - Possiblity to set snipcart lang manually
+  - Customize snipcart ui component
 ---
 
 <img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>

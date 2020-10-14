@@ -36,12 +36,41 @@ Then, add `@nuxtjs/snipcart` to the `modules` section of `nuxt.config.js`:
     '@nuxtjs/snipcart'
   ],
   snipcart: {
-    // Options
-    snipcartVersion: /* not required default value is v3.0.22 */,
+    // Options available
+    snipcartVersion: /* not required default value is v3.0.23 */,
     snipcartKey: /* required https://app.snipcart.com/dashboard/account/credentials */,
-    addProductBehavior: /* not required default false */,
+    addProductBehavior: /* not required default true */,
     locales: {} /* not required */ ,
     snipcartCustomize: '' /* not required should be absolute path*/
   }
 }
 ```
+
+## Options
+
+Check our [example](https://github.com/nuxt-community/nuxt-snipcart/tree/master/example) folder to see a default implementation of all features available.
+
+### snipcartVersion
+
+We are currently using snipcart version v3.0.23 by default but you can override at any moment. But we suggest you to stay in the default version.
+
+### snipcartKey
+
+[The snipcart token](https://app.snipcart.com/dashboard/account/credentials) that you can retrieve.
+
+### addProductBehavior
+
+By default when you add a product to the cart it will open snipcart cart. You can disable it by setting it to false. [check snipcart doc for more infos](https://docs.snipcart.com/v3/setup/installation#data-config-add-product-behavior)
+
+### locales
+
+Snipcart offering you the possibility to override all his [locales keys](https://github.com/snipcart/snipcart-l10n/blob/master/locales/en.json#L123). You can also add more [translations](https://docs.snipcart.com/v3/setup/localization)
+
+[Check our doc](/internationalization) for more informations
+
+
+### snipcartCustomize
+
+Snipcart let you "override" their default components. 
+
+[Check our doc](/customization) for more informations

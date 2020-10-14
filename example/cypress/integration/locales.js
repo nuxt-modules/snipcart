@@ -10,6 +10,7 @@ describe("Snipcart", () => {
     }).as("apiCheck");
 
     cy.wait("@apiCheck");
+    cy.wait(1000)
 
     cy.get(".snipcart-add-item").trigger("click");
 
