@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://github.com/nuxt-community/snipcart-module/compare/v0.0.11...v0.0.12) (2020-10-15)
+
+
+### Bug Fixes
+
+* **plugin:** avoid using consola and properly throw errors ([0088d74](https://github.com/nuxt-community/snipcart-module/commit/0088d74deaaabdaaae5a4ac5036726cf2f49cccc))
+
 ### [0.0.11](https://github.com/nuxt-community/snipcart-module/compare/v0.0.10...v0.0.11) (2020-10-14)
 
 ### [0.0.10](https://github.com/nuxt-community/snipcart-module/compare/v0.0.9...v0.0.10) (2020-10-14)
