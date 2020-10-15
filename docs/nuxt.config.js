@@ -1,7 +1,9 @@
 import theme from '@nuxt/content-theme-docs'
 
 export default theme({
-  loading: { color: '#ecc94b' },
+  docs: {
+    primaryColor: '#ecc94b' // yellow
+  },
   buildModules: [
     // https://github.com/bdrtsky/nuxt-ackee
     'nuxt-ackee'
