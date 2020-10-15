@@ -1,3 +1,5 @@
+[![@nuxtjs/color-mode](https://snipcart.nuxtjs.org/preview.png)](https://snipcart.nuxtjs.org)
+
 # @nuxtjs/snipcart
 
 [![npm version][npm-version-src]][npm-version-href]
@@ -6,7 +8,6 @@
 [![License][license-src]][license-href]
 
 > [Snipcart](https://docs.snipcart.com/v3/setup/installation) integration with for [NuxtJS](https://nuxtjs.org)
-
 
 ## Features
 
@@ -17,50 +18,11 @@
 - Possiblity to set snipcart lang manually
 - Customize snipcart ui component
 
-[📖 &nbsp;Read more](https://nuxt-snipcart.netlify.app/)
+[📖 &nbsp;Docs](https://snipcart.nuxtjs.org)
 
-## Quick Setup
+## Quick Start
 
-1. Add `@nuxtjs/snipcart` dependency to your project
-
-```bash
-# using yarn
-yarn add @nuxtjs/snipcart
-
-# using npm
-npm install @nuxtjs/snipcart
-```
-
-2. Add `@nuxtjs/snipcart` to the `buildModules` section of `nuxt.config.js`
-
-```js
-{
-  modules: [
-    // Simple usage
-    '@nuxtjs/snipcart',
-
-    // With options
-    ['@nuxtjs/snipcart', { /* module options */ }]
-  ]
-}
-```
-
-Or a separate section `snipcart` for module options:
-
-```js
-{
-  modules: [
-    // Simple usage
-    '@nuxtjs/snipcart',
-  ],
-  snipcart: {
-    snipcartKey: '<your-snipcart-key>',
-    /* all other options */
-  }
-}
-```
-
-See [module options](https://nuxt-snipcart.netlify.app/setup).
+See [Setup](https://snipcart.nuxtjs.org/setup) section to get stated.
 
 ## Development
 
