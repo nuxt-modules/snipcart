@@ -27,11 +27,14 @@
     "@nuxtjs/eslint-config": "latest",
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
+    "chai": "^4.2.0",
     "consola": "^2.15.0",
+    "cypress": "^5.4.0",
     "eslint": "latest",
     "husky": "latest",
     "nuxt": "^2.14.5",
     "nuxt-ackee": "^2.0.0",
-    "standard-version": "latest"
+    "standard-version": "latest",
+    "start-server-and-test": "^1.11.5"
   }
 }
