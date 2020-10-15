@@ -9,32 +9,27 @@
     "lib"
   ],
   "scripts": {
-    "docs": "nuxt docs",
-    "example": "nuxt example",
-    "generate": "nuxt generate docs",
+    "dev": "nuxt example",
+    "docs": "cd docs && yarn && yarn dev",
     "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
-    "start": "nuxt start docs",
-    "test:e2e": "cd example && yarn cypress:run",
-    "test": "yarn lint && yarn test:e2e"
+    "test": "yarn lint && yarn test:e2e",
+    "test:e2e": "cd example && yarn cypress:run"
   },
   "devDependencies": {
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@nuxt/content-theme-docs": "^0.7.2",
     "@nuxtjs/eslint-config": "latest",
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
-    "chai": "^4.2.0",
-    "consola": "^2.15.0",
+    "chai": "latest",
     "cypress": "^5.4.0",
     "eslint": "latest",
     "husky": "latest",
-    "nuxt": "^2.14.5",
-    "nuxt-ackee": "^2.0.0",
+    "nuxt": "latest",
     "standard-version": "latest",
-    "start-server-and-test": "^1.11.5"
+    "start-server-and-test": "latest"
   }
 }
