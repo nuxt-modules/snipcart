@@ -25,7 +25,7 @@
 
 ```bash
 # using yarn
-yarn add @nuxtjs/snipcart 
+yarn add @nuxtjs/snipcart
 
 # using npm
 npm install @nuxtjs/snipcart
@@ -33,7 +33,7 @@ npm install @nuxtjs/snipcart
 
 2. Add `@nuxtjs/snipcart` to the `buildModules` section of `nuxt.config.js`
 
-```js[nuxt.config.js]
+```js
 {
   modules: [
     // Simple usage
@@ -47,7 +47,7 @@ npm install @nuxtjs/snipcart
 
 Or a separate section `snipcart` for module options:
 
-```js[nuxt.config.js]
+```js
 {
   modules: [
     // Simple usage
@@ -72,7 +72,7 @@ See [module options](https://nuxt-snipcart.netlify.app/setup).
 
 [MIT License](./LICENSE)
 
-Copyright (c)
+Copyright (c) Nuxt Community
 
 Maintained by [Florent Giraud](https://github.com/f3ltron)
 

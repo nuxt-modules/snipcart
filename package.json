@@ -2,31 +2,23 @@
   "name": "@nuxtjs/snipcart",
   "version": "0.0.11",
   "description": "snipcart module for nuxt",
+  "repository": "nuxt-community/snipcart-module",
   "license": "MIT",
+  "main": "lib/module.js",
   "files": [
     "lib"
   ],
-  "contributors": [
-    {
-      "name": "Giraud Florent <hello@florent.dev>"
-    }
-  ],
-  "main": "lib/module.js",
   "scripts": {
     "docs": "nuxt docs",
     "example": "nuxt example",
     "generate": "nuxt generate docs",
-    "start": "nuxt start docs",
     "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
-    "version": "standard-version",
-    "test": "yarn lint && cd example && yarn cypress:run"
-  },
-  "publishConfig": {
-    "access": "public"
+    "start": "nuxt start docs",
+    "test:e2e": "cd example && yarn cypress:run",
+    "test": "yarn lint && yarn test:e2e"
   },
   "devDependencies": {
-    "consola": "^2.15.0",
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
     "@commitlint/cli": "latest",
@@ -35,6 +27,7 @@
     "@nuxtjs/eslint-config": "latest",
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
+    "consola": "^2.15.0",
     "eslint": "latest",
     "husky": "latest",
     "nuxt": "^2.14.5",
