@@ -20,7 +20,7 @@ category: Guide
 
 <alert type="info">
 
-  Make sure snipcartCustomize is an absolute path. Checkout [example](https://github.com/nuxt-community/nuxt-snipcart/tree/master/example) for more information.
+  Make sure snipcartCustomize is an absolute path. Checkout [example](https://github.com/nuxt-community/snipcart-module/tree/master/example) for more information.
 
 </alert>
 

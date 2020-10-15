@@ -48,7 +48,7 @@ Then, add `@nuxtjs/snipcart` to the `modules` section of `nuxt.config.js`:
 
 ## Options
 
-Check our [example](https://github.com/nuxt-community/nuxt-snipcart/tree/master/example) folder to see a default implementation of all features available.
+Check our [example](https://github.com/nuxt-community/snipcart-module/tree/master/example) folder to see a default implementation of all features available.
 
 ### snipcartVersion
 
@@ -71,6 +71,6 @@ Snipcart offering you the possibility to override all his [locales keys](https:/
 
 ### snipcartCustomize
 
-Snipcart let you "override" their default components. 
+Snipcart let you "override" their default components.
 
 [Check our doc](/customization) for more informations

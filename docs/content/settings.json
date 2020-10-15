@@ -1,10 +1,10 @@
 {
   "title": "@nuxtjs/snipcart",
-  "url": "https://nuxt-snipcart.netlify.app/",
+  "url": "https://snipcart.nuxtjs.org",
   "logo": {
     "light": "/logo-light.svg",
     "dark": "/logo-dark.svg"
   },
-  "github": "nuxt-community/nuxt-snipcart",
+  "github": "nuxt-community/snipcart-module",
   "twitter": "giraud_florent"
 }

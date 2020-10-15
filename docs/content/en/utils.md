@@ -20,7 +20,7 @@ You will have access to the `$snipcart.customfields` function in your project. I
 
 ### Usage
 
-You can check out our [example](https://github.com/nuxt-community/nuxt-snipcart/tree/master/example).
+You can check out our [example](https://github.com/nuxt-community/snipcart-module/tree/master/example).
 
 <alert type="info">
 
@@ -129,7 +129,7 @@ export default {
 </script>
 ```
 
-checkout our [example](https://github.com/nuxt-community/nuxt-snipcart/tree/master/example) repo for more informations
+checkout our [example](https://github.com/nuxt-community/snipcart-module/tree/master/example) repo for more informations
 
 
 ## bindProduct
