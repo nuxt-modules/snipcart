@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/nuxt-community/snipcart-module/compare/v0.0.9...v1.0.1) (2020-10-17)
+
+
+### Bug Fixes
+
+* **plugin:** avoid using consola and properly throw errors ([0088d74](https://github.com/nuxt-community/snipcart-module/commit/0088d74deaaabdaaae5a4ac5036726cf2f49cccc))
+* add correct color for loading bar ([abfc186](https://github.com/nuxt-community/snipcart-module/commit/abfc186ff9b89da9931af8033cd330e980c87c12))
+
 ### [0.0.12](https://github.com/nuxt-community/snipcart-module/compare/v0.0.11...v0.0.12) (2020-10-15)
 
 
