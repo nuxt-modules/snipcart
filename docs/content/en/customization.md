@@ -12,7 +12,7 @@ category: Guide
 ```js[nuxt.config.js]
 {
   snipcart: {
-    snipcartKey: process.env.snipcartKey,
+    key: process.env.key,
     snipcartCustomize: path.join(__dirname, './snipcart/customize'),
   },
 }

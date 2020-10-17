@@ -7,7 +7,7 @@ export default {
   srcDir: __dirname,
   buildModules: [{ handler: myModule }],
   snipcart: {
-    snipcartKey: process.env.SNIPCARTKEY,
+    key: process.env.key,
     snipcartCustomize: join(__dirname, './snipcart/customize'),
     locales: {
       fr: {

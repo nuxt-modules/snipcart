@@ -12,7 +12,7 @@ Snipcart offering you the possibility to override all his [locales keys](https:/
 ```js[nuxt.config.js]
 {
   snipcart: {
-    snipcartKey: process.env.snipcartKey,
+    key: process.env.key,
     locales: {
       fr: {
         cart_summary: {

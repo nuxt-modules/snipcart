@@ -37,8 +37,8 @@ Then, add `@nuxtjs/snipcart` to the `modules` section of `nuxt.config.js`:
   ],
   snipcart: {
     // Options available
-    snipcartVersion: /* not required default value is v3.0.23 */,
-    snipcartKey: /* required https://app.snipcart.com/dashboard/account/credentials */,
+    version: /* not required default value is v3.0.23 */,
+    key: /* required https://app.snipcart.com/dashboard/account/credentials */,
     addProductBehavior: /* not required default true */,
     locales: {} /* not required */,
     snipcartCustomize: '' /* not required should be absolute path */
@@ -50,11 +50,11 @@ Then, add `@nuxtjs/snipcart` to the `modules` section of `nuxt.config.js`:
 
 Check our [example](https://github.com/nuxt-community/snipcart-module/tree/master/example) folder to see a default implementation of all features available.
 
-### snipcartVersion
+### version
 
 We are currently using snipcart version v3.0.23 by default but you can override at any moment. But we suggest you to stay in the default version.
 
-### snipcartKey
+### key
 
 [The snipcart token](https://app.snipcart.com/dashboard/account/credentials) that you can retrieve.
 

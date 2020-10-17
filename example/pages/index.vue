@@ -87,8 +87,19 @@ export default {
         }
 
       ]
-    }
+    },
+    addItemEvent: null
   }),
+  mounted () {
+    document.addEventListener('snipcart.ready', function () {
+      this.addItemEvent = window.Snipcart.events.on('item.added', (cartItem) => {
+        console.log(cartItem)
+      })
+    })
+  },
+  beforeDestroy () {
+    this.addItemEvent.unsubscribe()
+  },
   methods: {
     switchLang () {
       this.lang = this.lang === 'fr' ? 'en' : 'fr'
