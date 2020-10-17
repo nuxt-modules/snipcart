@@ -3,7 +3,7 @@ title: Introduction
 description: 'A simple plugin to install snipcart'
 position: 1
 categoryPosition: 1
-category: ''
+category: 'home'
 features:
   - Init snipcart smoothly
   - Easy customization
@@ -26,4 +26,4 @@ A simple plugin to init snipcart with `@nuxtjs/snipcart` module.
 
 <list :items="features"></list>
 
-<p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
+<p class="flex items-center">Enjoy light and dark ! mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
