@@ -93,7 +93,7 @@ export default {
   mounted () {
     document.addEventListener('snipcart.ready', function () {
       this.addItemEvent = window.Snipcart.events.on('item.added', (cartItem) => {
-        console.log(cartItem)
+        // console.log(cartItem)
       })
     })
   },
