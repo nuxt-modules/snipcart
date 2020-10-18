@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/nuxt-community/snipcart-module/compare/v1.0.1...v1.0.3) (2020-10-18)
+
+
+### Bug Fixes
+
+* adding test when customize not define ([dd2158c](https://github.com/nuxt-community/snipcart-module/commit/dd2158cbbe92bbf524a97e4aef1fc060bee9401d))
+* adding test when customize not define ([08a944d](https://github.com/nuxt-community/snipcart-module/commit/08a944dcd33a25c7208ef9f161094331ca7c43b1))
+* require should not be here ([f7a07ad](https://github.com/nuxt-community/snipcart-module/commit/f7a07ada77219b94a04828fd069c00440528ec8e))
+
 ### [1.0.0](https://github.com/nuxt-community/snipcart-module/compare/v0.0.9...v1.0.0) (2020-10-17)
 
 
