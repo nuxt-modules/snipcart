@@ -8,6 +8,13 @@
   "files": [
     "lib"
   ],
+  "author": "Giraud Florent <hello@florent.dev>",
+  "keywords": [
+    "nuxt",
+    "snipcart",
+    "checkout"
+  ],
+
   "scripts": {
     "dev": "nuxt example",
     "docs": "cd docs && yarn && yarn dev",
