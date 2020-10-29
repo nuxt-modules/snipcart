@@ -74,3 +74,5 @@ Snipcart offering you the possibility to override all his [locales keys](https:/
 Snipcart let you "override" their default components.
 
 [Check our doc](/customization) for more informations
+
+We will watch this folder to reload nuxt on change. 
