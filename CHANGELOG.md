@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/nuxt-community/snipcart-module/compare/v1.0.3...v1.1.0) (2020-10-29)
+
+
+### Features
+
+* add watch funcitonnality on development so it can reload on change ([0e9537d](https://github.com/nuxt-community/snipcart-module/commit/0e9537d5df406c610363b5c6708fbd7dc706237a))
+
 ### [1.0.3](https://github.com/nuxt-community/snipcart-module/compare/v1.0.1...v1.0.3) (2020-10-18)
 
 
