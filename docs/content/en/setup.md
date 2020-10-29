@@ -3,6 +3,7 @@ title: Setup
 description: 'Setup configuration'
 position: 2
 category: Guide
+version: 1.1.0
 ---
 
 Check the [Nuxt.js documentation](https://nuxtjs.org/guides/configuration-glossary/configuration-modules) for more information on installing and using modules in Nuxt.js.
