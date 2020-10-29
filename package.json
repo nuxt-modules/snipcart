@@ -31,7 +31,7 @@
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
     "chai": "latest",
-    "cypress": "^5.4.0",
+    "cypress": "^5.5.0",
     "eslint": "latest",
     "husky": "latest",
     "nuxt": "latest",
