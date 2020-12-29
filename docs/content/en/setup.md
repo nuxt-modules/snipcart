@@ -40,7 +40,7 @@ Then, add `@nuxtjs/snipcart` to the `modules` section of `nuxt.config.js`:
     // Options available
     version: /* not required default value is v3.0.23 */,
     key: /* required https://app.snipcart.com/dashboard/account/credentials */,
-    addProductBehavior: /* not required default true */,
+    attributes: /* not required default [] */,
     locales: {} /* not required */,
     snipcartCustomize: '' /* not required should be absolute path */
   }
@@ -59,9 +59,21 @@ We are currently using snipcart version v3.0.23 by default but you can override 
 
 [The snipcart token](https://app.snipcart.com/dashboard/account/credentials) that you can retrieve.
 
-### addProductBehavior
+### attributes
 
-By default when you add a product to the cart it will open snipcart cart. You can disable it by setting it to false. [check snipcart doc for more infos](https://docs.snipcart.com/v3/setup/installation#data-config-add-product-behavior)
+It can happen you may want to add more data-item to snipcart initialization. By passing them into attributes they should work properly.
+
+```js[nuxt.config.js]
+module.exports = {
+  snipart: {
+    ...,
+    attributes: [
+      // ['data-config-modal-style', 'side']
+      // ['data-config-add-product-behavior', 'none']
+    ]
+  }
+}
+```
 
 ### locales
 

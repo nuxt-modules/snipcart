@@ -20,8 +20,11 @@ export default {
           total: 'Total en'
         }
       }
-    }
-    // addProductBehavior: false,
+    },
+    attributes: [
+      ['data-config-modal-style', 'side']
+    // ['data-config-add-product-behavior', 'none']
+    ]
   },
   css: ['~/snipcart/customize.css']
 }
