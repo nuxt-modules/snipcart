@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/nuxt-community/snipcart-module/compare/v1.1.0...v1.1.1) (2020-12-29)
+
+
+### Bug Fixes
+
+* test cypress injection ([2c03e04](https://github.com/nuxt-community/snipcart-module/commit/2c03e0449bbc6e82f817f343c385f90ed252ab2b))
+
 ## [1.1.0](https://github.com/nuxt-community/snipcart-module/compare/v1.0.3...v1.1.0) (2020-10-29)
 
 
