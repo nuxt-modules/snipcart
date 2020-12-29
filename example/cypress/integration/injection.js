@@ -22,7 +22,7 @@ describe('Snipcart', () => {
       chai
         .expect(html)
         .contain(
-          '<link data-n-head="ssr" rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.23/default/snipcart.css">'
+          '<link data-n-head="ssr" rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0/default/snipcart.css">'
       );
     })
 
@@ -33,7 +33,7 @@ describe('Snipcart', () => {
 
       chai
         .expect(html)
-        .contain('<script src="https://cdn.snipcart.com/themes/v3.0.23/default/snipcart.js"></script>');
+        .contain('<script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js"></script>');
 
       chai.expect(html).contain('<div id="snipcart" class="snipcart">');
     })
