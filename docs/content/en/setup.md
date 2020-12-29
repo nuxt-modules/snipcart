@@ -67,6 +67,7 @@ It can happen you may want to add more data-item to snipcart initialization. By 
 module.exports = {
   snipart: {
     ...,
+    
     attributes: [
       // ['data-config-modal-style', 'side']
       // ['data-config-add-product-behavior', 'none']
