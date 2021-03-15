@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/nuxt-community/snipcart-module/compare/v1.1.1...v1.2.0) (2021-03-15)
+
+
+### Features
+
+* test adding button on project ([d9385d8](https://github.com/nuxt-community/snipcart-module/commit/d9385d839e8ead544d218c0ca83f189eb9ae5b49))
+
+
+### Bug Fixes
+
+* fix memory leak by using the watch in the module instead on the application itself ([cdd880b](https://github.com/nuxt-community/snipcart-module/commit/cdd880bac3abd6037e68161efd140205cf0dbeb6)), closes [#19](https://github.com/nuxt-community/snipcart-module/issues/19)
+
 ### [1.1.1](https://github.com/nuxt-community/snipcart-module/compare/v1.1.0...v1.1.1) (2020-12-29)
 
 
