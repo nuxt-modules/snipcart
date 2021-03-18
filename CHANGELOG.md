@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/nuxt-community/snipcart-module/compare/v1.2.1...v1.2.2) (2021-03-18)
+
+
+### Bug Fixes
+
+* correct memory link ([3421cf9](https://github.com/nuxt-community/snipcart-module/commit/3421cf966e6a570dd11254207353c3ae85d9cfdb)), closes [#19](https://github.com/nuxt-community/snipcart-module/issues/19)
+
 ### [1.2.1](https://github.com/nuxt-community/snipcart-module/compare/v1.2.0...v1.2.1) (2021-03-15)
 
 
