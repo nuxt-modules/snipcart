@@ -41,8 +41,7 @@ Then, add `@nuxtjs/snipcart` to the `modules` section of `nuxt.config.js`:
     version: /* not required default value is v3.0.23 */,
     key: /* required https://app.snipcart.com/dashboard/account/credentials */,
     attributes: /* not required default [] */,
-    locales: {} /* not required */,
-    snipcartCustomize: '' /* not required should be absolute path */
+    locales: {} /* not required */
   }
 }
 ```
@@ -83,7 +82,7 @@ Snipcart offering you the possibility to override all his [locales keys](https:/
 [Check our doc](/internationalization) for more informations
 
 
-### snipcartCustomize
+### Customization
 
 Snipcart let you "override" their default components.
 

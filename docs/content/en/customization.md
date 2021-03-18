@@ -9,18 +9,17 @@ category: Guide
 
 [Customizing components](https://docs.snipcart.com/v3/setup/customization) is easy with snipcart. We let you the possibility to inject a string components templates into `@nuxtjs/snipcart`.
 
-```js[nuxt.config.js]
-{
-  snipcart: {
-    key: process.env.key,
-    snipcartCustomize: path.join(__dirname, './snipcart/customize'),
-  },
-}
-```
+The only thing you will have to do is to create `snipcart/customize.js` and/or `snipcart/customize.css` at your root folder.
 
 <alert type="info">
 
   Make sure snipcartCustomize is an absolute path. Checkout [example](https://github.com/nuxt-community/snipcart-module/tree/master/example) for more information.
+
+</alert>
+
+<alert type="warning">
+
+  For now we only accept those two files
 
 </alert>
 

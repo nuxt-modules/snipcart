@@ -1,4 +1,4 @@
-import { resolve, join } from 'path'
+import { resolve } from 'path'
 import myModule from '../'
 
 export default {
@@ -8,7 +8,6 @@ export default {
   buildModules: [{ handler: myModule }],
   snipcart: {
     key: process.env.key,
-    snipcartCustomize: join(__dirname, './snipcart/customize'),
     locales: {
       fr: {
         cart_summary: {
