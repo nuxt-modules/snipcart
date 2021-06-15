@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/nuxt-community/snipcart-module/compare/v1.2.2...v1.3.0) (2021-06-15)
+
+
+### Features
+
+* added support for the setCurrency method and code example of this feature ([7f32f8a](https://github.com/nuxt-community/snipcart-module/commit/7f32f8a20b26ee0abcc25bd64dbdbe96d3e94d54))
+
+
+### Bug Fixes
+
+* lint ([ecbfaaf](https://github.com/nuxt-community/snipcart-module/commit/ecbfaaf731fa1588a09767287116bea21f9561c6))
+
 ### [1.2.2](https://github.com/nuxt-community/snipcart-module/compare/v1.2.1...v1.2.2) (2021-03-18)
 
 
