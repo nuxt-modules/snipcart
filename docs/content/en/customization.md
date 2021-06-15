@@ -4,7 +4,6 @@ description: 'Snipcart customization'
 position: 4
 category: Guide
 ---
-
 ## customize ui components
 
 [Customizing components](https://docs.snipcart.com/v3/setup/customization) is easy with snipcart. We let you the possibility to inject a string components templates into `@nuxtjs/snipcart`.

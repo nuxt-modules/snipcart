@@ -132,6 +132,33 @@ export default {
 checkout our [example](https://github.com/nuxt-community/snipcart-module/tree/master/example) repo for more informations
 
 
+## setCurrency
+
+Change currency based on snipcart api. https://docs.snipcart.com/v1/javascript-api/public-api.
+
+### Usage
+
+
+```vue
+<template>
+  <div>
+    <button class="switch-currency" @click="switchCurrency">
+      switch currency
+    </button>
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    switchCurrency (currency) {
+      this.$snipcart.setCurrency(currency)
+    }
+  }
+}
+</script>
+```
+
 ## bindProduct
 
 You can add informations by default with snipcart by yourself.
