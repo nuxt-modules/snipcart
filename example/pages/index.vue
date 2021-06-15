@@ -1,7 +1,7 @@
 <template>
   <div>
-    Items Number : <span class="snipcart-items-count" />
-    Items price: <span class="snipcart-total-price" />
+    Items Number : <span class="snipcart-items-count" /> Items price:
+    <span class="snipcart-total-price" />
     <button
       class="snipcart-add-item"
       v-bind="{
@@ -22,6 +22,12 @@
 
     <button class="switch-lang" @click="switchLang">
       switch Lang
+    </button>
+    <button class="switch-currency" @click="switchCurrency('eur')">
+      Change Currency to euros
+    </button>
+    <button class="switch-currency" @click="switchCurrency('usd')">
+      Change Currency to dollars
     </button>
   </div>
 </template>
@@ -85,7 +91,6 @@ export default {
           name: 'Engraving',
           placeholder: 'ex: John Doe'
         }
-
       ]
     },
     addItemEvent: null
@@ -104,6 +109,9 @@ export default {
     switchLang () {
       this.lang = this.lang === 'fr' ? 'en' : 'fr'
       this.$snipcart.setLanguage(this.lang)
+    },
+    switchCurrency (currency) {
+      this.$snipcart.setCurrency(currency)
     }
   }
 }
