@@ -20,7 +20,8 @@
     "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
     "test": "yarn lint && yarn test:e2e",
-    "test:e2e": "cd example && yarn cypress:run"
+    "test:e2e": "cd example && yarn cypress:run",
+    "cypress:open": "cd example && yarn open"
   },
   "devDependencies": {
     "@babel/core": "latest",
@@ -31,7 +32,7 @@
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
     "chai": "latest",
-    "cypress": "^7.1.0",
+    "cypress": "^8.6.0",
     "eslint": "latest",
     "husky": "latest",
     "nuxt": "latest",

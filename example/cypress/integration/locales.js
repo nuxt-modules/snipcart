@@ -2,19 +2,18 @@
 
 describe("Snipcart", () => {
   it("snipcart element should have been injected", () => {
-    cy.visit("/");
-    cy.server();
-    cy.route({
+    cy.intercept({
       method: "GET",
-      url: "https://cdn.snipcart.com/**"
+      url: "https://app.snipcart.com/api/sessions"
     }).as("apiCheck");
 
+    cy.visit("/");
+
     cy.wait("@apiCheck");
-    cy.wait(1000)
 
     cy.get(".snipcart-add-item").trigger("click");
 
-    cy.get(".snipcart-modal__container").should("contain", "Total fr");
+    cy.get(".snipcart-modal__container").should("contain", "We're Total fr");
 
     cy.get(".snipcart-modal__close-title").trigger('click');
 
@@ -22,7 +21,7 @@ describe("Snipcart", () => {
 
     cy.get(".snipcart-checkout").trigger('click');
 
-    cy.get(".snipcart-modal__container").should("contain", "Total en");
+    cy.get(".snipcart-modal__container").should("contain", "We're Total en");
 
   });
 });
