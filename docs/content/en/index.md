@@ -20,7 +20,7 @@ features:
 
 Welcome to @nuxtjs/snipcart
 
-A simple plugin to init snipcart with `@nuxtjs/snipcart` module.
+A simple plugin to init snipcart with `@nuxtjs/snipcart` module. version 1.3.1
 
 ## Features
 
