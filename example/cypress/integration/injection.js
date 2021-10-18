@@ -2,7 +2,27 @@
 
 describe('Snipcart', () => {
   it('snipcart element should have been injected', () => {
+    cy.intercept({
+      method: "GET",
+      url: "https://app.snipcart.com/api/sessions"
+    }).as("apiCheck");
+
+    cy.intercept({
+      method: "GET",
+      url: "https://cdn.snipcart.com/themes/*/default/snipcart.js"
+    }).as("jsCheck");
+
+    cy.intercept({
+      method: "GET",
+      url: "https://cdn.snipcart.com/themes/*/default/snipcart.css"
+    }).as("cssCheck");
+
     cy.visit('/')
+
+    cy.wait("@apiCheck");
+    cy.wait("@jsCheck");
+    cy.wait("@cssCheck");
+
 
     cy.get('html').then((el) => {
       const html = el[0].innerHTML
@@ -25,8 +45,6 @@ describe('Snipcart', () => {
           '<link data-n-head="ssr" rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0/default/snipcart.css">'
       );
     })
-
-    cy.wait(1000)
 
     cy.get('html').then((el) => {
       const html = el[0].innerHTML;

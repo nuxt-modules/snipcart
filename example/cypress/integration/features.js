@@ -2,15 +2,14 @@
 
 describe("Snipcart", () => {
   it("snipcart element should have been injected", () => {
-    cy.visit("/");
-    cy.server()
-    cy.route({
+    cy.intercept({
       method: "GET",
-      url: "https://cdn.snipcart.com/**"
+      url: "https://app.snipcart.com/api/sessions"
     }).as("apiCheck");
 
-    cy.wait('@apiCheck')
-    cy.wait(1000)
+    cy.visit("/");
+
+    cy.wait("@apiCheck");
 
     cy.get('[data-item-custom1-name="Frame color"]').should('exist')
     cy.get('[data-item-custom5-name="Readonly information"]').should('exist')

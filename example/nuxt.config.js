@@ -11,12 +11,12 @@ export default {
     locales: {
       fr: {
         cart_summary: {
-          total: 'Total fr'
+          total: 'We\'re Total fr'
         }
       },
       en: {
         cart_summary: {
-          total: 'Total en'
+          total: "We're Total en"
         }
       }
     },
