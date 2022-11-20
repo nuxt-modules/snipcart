@@ -6,7 +6,7 @@
   },
   "devDependencies": {
     "@nuxt/content-theme-docs": "0.10.2",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.0.0",
     "nuxt-ackee": "^2.0.0"
   }
 }
