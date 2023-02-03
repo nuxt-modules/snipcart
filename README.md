@@ -9,7 +9,7 @@
 
 > [Snipcart](https://docs.snipcart.com/v3/setup/installation) integration with for [NuxtJS](https://nuxtjs.org)
 
-## :building_construction: INFORMATIONS NUXT 3 MIGRATION IN PROGRESS
+## :building_construction: NUXT 3 MIGRATION IN PROGRESS
 
 You can check [the discussion](https://github.com/nuxt-community/snipcart-module/issues/37) or check the code on [the next branch](https://github.com/nuxt-community/snipcart-module/tree/next)
 
