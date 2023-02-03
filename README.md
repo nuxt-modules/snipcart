@@ -9,6 +9,14 @@
 
 > [Snipcart](https://docs.snipcart.com/v3/setup/installation) integration with for [NuxtJS](https://nuxtjs.org)
 
+## :building_construction: INFORMATIONS NUXT 3 MIGRATION IN PROGRESS
+
+You can check [the discussion](https://github.com/nuxt-community/snipcart-module/issues/37) or check the code on [the next branch](https://github.com/nuxt-community/snipcart-module/tree/next)
+
+If you like this module and want to support the project. You can do it by:
+- donate using GitHub sponsor
+- communicate on Linkedin or Twitter
+
 ## Features
 
 - Init snipcart smoothly
@@ -36,7 +44,7 @@ See [Setup](https://snipcart.nuxtjs.org/setup) section to get stated.
 
 Copyright (c) Nuxt Community
 
-Maintained by [Florent Giraud](https://github.com/f3ltron)
+Maintained by [Florent Giraud](https://github.com/flozero)
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/snipcart/latest.svg
