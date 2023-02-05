@@ -1,21 +1,6 @@
 [![@nuxtjs/color-mode](https://snipcart.nuxtjs.org/preview.png)](https://snipcart.nuxtjs.org)
 
-# @nuxtjs/snipcart
-
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
-[![License][license-src]][license-href]
-
-> [Snipcart](https://docs.snipcart.com/v3/setup/installation) integration with for [NuxtJS](https://nuxtjs.org)
-
-## :building_construction: NUXT 3 MIGRATION IN PROGRESS
-
-You can check [the discussion](https://github.com/nuxt-community/snipcart-module/issues/37) or check the code on [the next branch](https://github.com/nuxt-community/snipcart-module/tree/next)
-
-If you like this module and want to support the project. You can do it by:
-- donate using GitHub sponsor
-- communicate on Linkedin or Twitter
+# @nuxtjs/snipcart for nuxt2 only for nuxt3 please check main branch
 
 ## Features
 
