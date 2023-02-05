@@ -8,7 +8,8 @@
 > Snipcart Module
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-![Screenshot 2023-02-05 at 6 38 57 PM](https://user-images.githubusercontent.com/11556276/216852510-d80ebd68-c93d-4f0a-9495-f0400fc10d51.png | width=400)
+
+<img src="https://user-images.githubusercontent.com/11556276/216852510-d80ebd68-c93d-4f0a-9495-f0400fc10d51.png" width="400" />
 
 ## If you are looking for nuxt 2 version please use [1.x version](https://github.com/nuxt-community/snipcart-module/blob/master/README.md)
 
