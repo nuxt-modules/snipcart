@@ -1,13 +1,7 @@
 import { defineNuxtModule, addPlugin, createResolver, addImportsDir } from '@nuxt/kit'
+import { SnipcartSDK } from './types'
 
-interface ModuleOptionsPrivate {
-  LoadSnipcart?: Function
-  isBeforeV3_4?: boolean
-  isLoaded?: boolean
-  events? : string[]
-}
-
-export interface ModuleOptions extends ModuleOptionsPrivate {
+export interface ModuleOptions {
   version: string
   publicApiKey: string
   timeoutDuration: number
@@ -20,13 +14,15 @@ export interface ModuleOptions extends ModuleOptionsPrivate {
   language: string,
   templatesUrl: string,
   currency: string
+  subscription: boolean,
+  translations: any
 }
 
 declare global {
   interface Window { 
     SnipcartSettings: ModuleOptions
-    // TODO: ask for the type definition from snipcart here
-    Snipcart: any
+    Snipcart: SnipcartSDK
+    LoadSnipcart: Function
   }
 }
 
@@ -50,7 +46,9 @@ export default defineNuxtModule<ModuleOptions>({
     modalStyle: "",
     language: "en",
     templatesUrl: "",
-    currency: "us"
+    currency: "usd",
+    subscription: false,
+    translations: {}
   },
   async setup(options, nuxt) {
 

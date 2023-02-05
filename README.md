@@ -4,43 +4,33 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
+
 > Snipcart Module
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- [![@nuxtjs/color-mode](https://snipcart.nuxtjs.org/preview.png)](https://snipcart.nuxtjs.org) -->
+[![@nuxtjs/color-mode](https://snipcart.nuxtjs.org/preview.png)](https://snipcart.nuxtjs.org)
 
-## WARNING this is still under development API will probably have breaking change
-
-TODO:
-- [x] publish beta version
-- [] Update process to align with new Nuxt module
-- [] Evaluate and make sure we have a migration doc
-- [] Check how far we can have backward compatibility
-- [] Improve Examples
-- [] Add testing cypress or playwright
-- [] Contact Snipcart for typing for Snipcart main
-- [] Current Module typing is correct but need improvement on the "private" properties
+## If you are looking for nuxt 2 version please use [1.x version](https://github.com/nuxt-community/snipcart-module/blob/master/README.md)
 
 ## Features
 
-- ⛰ Init Snipcart automatically, lazily, and manually
-- 🚠 Easy customization
-- 🌲 Use Snipcart and internationalization
-- ⛰ Customize the Snipcart checkout experience easily
+- Full typescript support base on [snipcart interface documentation](https://docs.snipcart.com/v3/sdk/reference)
+- Full support of snipcart documentation out of the box
+- highly customization with power of nuxt3
 
 ## Quick Setup
 
-1. Add `@nuxtjs/snipcart@beta` dependency to your project
+1. Add `@nuxtjs/snipcart` dependency to your project
 
 ```bash
 # Using pnpm
-pnpm add -D @nuxtjs/snipcart@beta
+pnpm add -D @nuxtjs/snipcart
 
 # Using yarn
-yarn add --dev @nuxtjs/snipcart@beta
+yarn add --dev @nuxtjs/snipcart
 
 # Using npm
-npm install --save-dev @nuxtjs/snipcart@beta
+npm install --save-dev @nuxtjs/snipcart
 ```
 
 2. Add `@nuxtjs/snipcart` to the `modules` section of `nuxt.config.ts`
@@ -57,6 +47,36 @@ export default defineNuxtConfig({
 ```
 
 That's it! You can now use `Snipcart` in your Nuxt app ✨
+
+At any time please have a look at our beautiful playground example.
+
+
+## useSnipcart
+
+We tried to not create too much wrapper around the Snipcart api so we don't have to maintain so much if Snipcart change. But you may found some of them useful as:
+- exposing snipcart instance
+- use of isReady boolean to watch and make sure you can use snipcart instance safely
+- realtime store subscription (working but performance hit) 
+- some function in case you are not using the JS SDK form `window.Snipcart` that will help you add html attributes that Snipcart will read on load. As bindProductItem or bindProductItemCustom
+- ability to change language or currency using respectively `setLanguage` or `setCurrency`
+
+As we have a full typescript support play with it and read the description of what is exposed.
+
+## Loading
+
+We are following Snipcart [different loadings](https://docs.snipcart.com/v3/setup/installation). You can control the load of the js using `loadStrategy` configuration property. You can tell snipcart to not load css using `loadCSS` config property.
+
+If you load async take in consideration on server or client you will not have access to `window.Snipcart` or `snipcart` exposed by `useSnipcart` until its loaded. So adapt your logic
+
+## [Customization](https://docs.snipcart.com/v3/setup/customization)
+
+With nuxt it is super easy to customize snipart components. Use your own class css in addition of custom html to override [snipcart component](https://docs.snipcart.com/v3/themes/default/reference).
+
+To do that create for example `public/snipcart-custom.html` as inside the playground. And make sure you add the path in the nuxt config using `templatesUrl` property
+
+## [Snipcart SDK](https://docs.snipcart.com/v3/sdk/basics)
+
+As we told before we expose the snipcart SDK as by default with window.Snipcart or form the composable `useSnipcart`. So you will have the exact same full access to snipcart SDK
 
 ## Development
 
@@ -83,13 +103,12 @@ npm run test:watch
 # Release new version
 npm run release
 ```
-
 <!-- Badges -->
-<!-- [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/snipcart/next.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/snipcart/next.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-version-href]: https://npmjs.com/package/@nuxtjs/snipcart
 
 [npm-downloads-src]: https://img.shields.io/npm/dm/@nuxtjs/snipcart.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/snipcart
 
 [license-src]: https://img.shields.io/npm/l/@nuxtjs/snipcart.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/@nuxtjs/snipcart -->
+[license-href]: https://npmjs.com/package/@nuxtjs/snipcart

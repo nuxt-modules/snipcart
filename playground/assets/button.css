@@ -1,0 +1,40 @@
+button {
+
+/* Default */
+/* --color-buttonPrimary: white; 
+--bgColor-buttonPrimary: black; */
+
+/* Hover */
+/* --color-buttonPrimary-hover
+--borderColor-buttonPrimary-hover
+--bgColor-buttonPrimary-hover
+--shadow-buttonPrimary-hover
+
+/* Active */
+/* --color-buttonPrimary-active
+--borderColor-buttonPrimary-active
+--bgColor-buttonPrimary-active
+--shadow-buttonPrimary-active */
+
+/* Focus */
+/* --color-buttonPrimary-focus
+--borderColor-buttonPrimary-focus
+--bgColor-buttonPrimary-focus
+--shadow-buttonPrimary-focus */
+
+/* Disabled */
+/* --color-buttonPrimary-disabled
+--borderColor-buttonPrimary-disabled
+--bgColor-buttonPrimary-disabled */
+
+/* Success */
+/* --color-buttonPrimary-success
+--borderColor-buttonPrimary-success
+--bgColor-buttonPrimary-success */
+
+/* Error */
+/* --color-buttonPrimary-error
+--borderColor-buttonPrimary-error
+--bgColor-buttonPrimary-error */
+
+}

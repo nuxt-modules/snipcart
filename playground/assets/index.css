@@ -1,6 +1,5 @@
-.bg-red {
-    background-color: red;
-    color: blue;
-    font-size: 40px;
-}
-  
+@import url("./button.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

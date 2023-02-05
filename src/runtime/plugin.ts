@@ -1,98 +1,33 @@
 import { defineNuxtPlugin } from '#app'
 import { ModuleOptions } from '../module';
+import { useSnipcart } from './composables/useSnipcart';
 
-const initBackwardCompatibility = (t: HTMLElement) => {
-    const settings = window.SnipcartSettings
-    if (settings.isBeforeV3_4) {
-        t.dataset.apiKey = settings.publicApiKey;
-        if(settings.addProductBehavior) {
-            t.dataset.configAddProductBehavior = settings.addProductBehavior;
-        }
-        if (settings.addProductBehavior) {
-            t.dataset.configAddProductBehavior = settings.addProductBehavior
-        }
-        if (settings.modalStyle) {
-            t.dataset.configModalStyle = settings.modalStyle
-        }
-        if (settings.currency) {
-            t.dataset.currency = settings.currency
-        }
-        if (settings.templatesUrl) {
-            t.dataset.templatesUrl = settings.templatesUrl
-        }
-    }
-
-    return t
-}
-
-const LoadSnipcart = () => {
-    const settings = window.SnipcartSettings
-    if (settings.isLoaded) {
-      return;
-    }
-
-    settings.isLoaded = true;
-  
-    const head = document.getElementsByTagName("head")[0];
-    let snipcart = <HTMLElement>document.querySelector("#snipcart");
-    let snipcartJS = <HTMLScriptElement>document.querySelector(`src[src^="${settings.protocol}://${settings.domain}"][src$="snipcart.js"]`);
-    let snipcartCSS = <HTMLLinkElement>document.querySelector(`link[href^="${settings.protocol}://${settings.domain}"][href$="snipcart.css"]`);
-
-    if (!snipcart) {
-        snipcart = document.createElement("div");
-        snipcart.id = "snipcart";
-        snipcart.setAttribute("hidden", "true");
-        document.body.appendChild(snipcart);
-    }
-
-    snipcart = initBackwardCompatibility(snipcart);
-
-    if (!snipcartJS) {
-        snipcartJS = document.createElement("script");
-        snipcartJS.src = `${settings.protocol}://${settings.domain}/themes/v${settings.version}/default/snipcart.js`;
-        snipcartJS.async = true;
-        head.appendChild(snipcartJS);
-    }
-
-    if (!snipcartCSS && settings.loadCSS) {
-        snipcartCSS = document.createElement("link");
-        snipcartCSS.rel = "stylesheet";
-        snipcartCSS.type = "text/css";
-        snipcartCSS.href = `${settings.protocol}://${settings.domain}/themes/v${settings.version}/default/snipcart.css`;
-        head.prepend(snipcartCSS);
-    }
-
-    settings.events?.forEach(function(eventType) {
-        document.removeEventListener(eventType, <EventListenerOrEventListenerObject>settings.LoadSnipcart);
-    });
-}
-
-const readySnipcart = () => {
-    const settings = window.SnipcartSettings 
-    if (settings.loadStrategy) {
-        if (settings.loadStrategy === "on-user-interaction") {
-            settings.events?.forEach(function(event) {
-                document.addEventListener(event, <EventListenerOrEventListenerObject>settings.LoadSnipcart);
-            });
-            setTimeout(<TimerHandler>settings.LoadSnipcart, settings.timeoutDuration);
-        }
-    } else {
-        if (settings.LoadSnipcart) {
-            settings.LoadSnipcart();
-        }
-    }
-}
+/** 
+ * @description this code is coming from snipcart https://docs.snipcart.com/v3/setup/installation
+ * if you want a readable version of this code check _readable.md file in the repo. I am not using the readble version
+ * cause it will be fast to maintain like this instead of taking the risks to miss interpret the code
+*/
+/* eslint-disable-next-line no-var */
+const LoadSnipcart = () => function(){var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version="3.0");var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain="cdn.snipcart.com");var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol="https");var m,g;(g=(m=window.SnipcartSettings).loadCSS)!=null||(m.loadCSS=!0);const y=window.SnipcartSettings.version.includes("v3.0.0-ci")||window.SnipcartSettings.version!="3.0"&&window.SnipcartSettings.version.localeCompare("3.4.0",void 0,{numeric:!0,sensitivity:"base"})===-1,f=["focus","mouseover","touchmove","scroll","keydown"];window.LoadSnipcart=o;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==="on-user-interaction"&&(f.forEach(function(t){return document.addEventListener(t,o)}),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=!1;function o(){if(a)return;a=!0;var t=document.getElementsByTagName("head")[0],n=document.querySelector("#snipcart"),i=document.querySelector('src[src^="'.concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,'"][src$="snipcart.js"]')),e=document.querySelector('link[href^="'.concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,'"][href$="snipcart.css"]'));n||(n=document.createElement("div"),n.id="snipcart",n.setAttribute("hidden","true"),document.body.appendChild(n)),h(n),i||(i=document.createElement("script"),i.src="".concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,"/themes/v").concat(window.SnipcartSettings.version,"/default/snipcart.js"),i.async=!0,t.appendChild(i)),!e&&window.SnipcartSettings.loadCSS&&(e=document.createElement("link"),e.rel="stylesheet",e.type="text/css",e.href="".concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,"/themes/v").concat(window.SnipcartSettings.version,"/default/snipcart.css"),t.prepend(e)),f.forEach(function(v){return document.removeEventListener(v,o)})}function h(t){!y||(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.addProductBehavior&&(t.dataset.configAddProductBehavior=window.SnipcartSettings.addProductBehavior),window.SnipcartSettings.modalStyle&&(t.dataset.configModalStyle=window.SnipcartSettings.modalStyle),window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency),window.SnipcartSettings.templatesUrl&&(t.dataset.templatesUrl=window.SnipcartSettings.templatesUrl))}};
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.hook("app:mounted", () => {
-      const settings = nuxtApp.$config.public.snipcart as ModuleOptions
-      settings.events =  ["focus","mouseover","touchmove","scroll","keydown"],
-      settings.isBeforeV3_4 = settings.version.includes("v3.0.0-ci") || (settings.version !== "3.0" && settings.version.localeCompare("3.4.0", undefined, { numeric: true, sensitivity: "base" }) === -1);
-      settings.isLoaded = false
-      settings.LoadSnipcart = LoadSnipcart
-      window.SnipcartSettings = settings
-      document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", readySnipcart) : readySnipcart();
-  })
+    nuxtApp.hook("app:mounted", () => {
+        window.SnipcartSettings = nuxtApp.$config.public.snipcart as ModuleOptions
+
+        if (!process.server) {
+            document.addEventListener('snipcart.ready', () => {
+                const { snipcart, isReady } = useSnipcart()
+                snipcart.value = window.Snipcart
+
+                const { language, translations } = window.SnipcartSettings
+
+                snipcart.value.api.session.setLanguage(language, translations ? translations[language] : {})
+                isReady.value = true
+            });
+            
+            LoadSnipcart()()
+        }
+    })
 })
 
 

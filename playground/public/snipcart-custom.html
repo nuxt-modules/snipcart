@@ -1,20 +1,13 @@
 <div id="snipcart-templates">
-    <item-line>
-        <li class="snipcart__item__line snipcart__box">
-            <div class="snipcart__item__line__product">
-                <div class="snipcart__item__line__header">
-                    <h2 class="snipcart__item__line__header__title bg-red">
-                        {{ item.name }}
-                    </h2>
- 
-                    <item-quantity class="snipcart__item__line__quantity" v-if="!adding"></item-quantity>
-                    <div class="snipcart__item__line__header__actions">
-                        <remove-item-action class="snipcart__button--icon">
-                            <icon name="trash" class="icon--red"  alt="item.remove_item"></icon>
-                        </remove-item-action>
-                    </div>
-                </div>
-            </div>
-        </li>
-    </item-line>
- </div>
+    <button-primary>
+        <base-button
+            class="rounded-md border border-transparent bg-amber-600 py-3 px-8 text-base font-medium text-white hover:bg-amber-700 focus:outline-none"
+            v-bind="{ ...$props, ...$attrs }"
+            v-on="$listeners"
+        >
+            <template v-for="(value, name) in $slots" v-slot:[name]>
+                <slot :name="name"></slot>
+            </template>
+        </base-button>
+    </button-primary>
+</div>

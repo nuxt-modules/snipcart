@@ -1,140 +1,185 @@
 <template>
-  <div>
-    Nuxt module playground!
-    <button
-      class="snipcart-add-item"
-      data-item-id="starry-night"
-      data-item-price="79.99"
-      data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
-      data-item-image="https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-      data-item-name="The Starry Night"
-    >
-      Add to cart
-    </button>
-    <ClientOnly>
-      <button
-        class="snipcart-add-item"
-        v-bind="{
-          ...snipcart.customFields(product.customFields),
-          ...snipcart.bindProduct(product.data)
-        }"
-      >
-        Add to cart with custom field
+  <div class="mx-auto max-w-2xl lg:max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+    <nav class="flex justify-between items-center">
+      <button class="snipcart-customer-signin flex items-center">
+        <UserCircleIcon class="h-8 w-8 mr-4" /> My account
       </button>
-    </ClientOnly>
-    <div>
-      <div>
-        Items count:
-        <span class="snipcart-items-count" />
+      <div class="w-10 border border-black" />
+      <div class="flex items-start relative">
+        <div class="snipcart-total-price mr-4 text-3xl" />
+        -
+        <div class="snipcart-items-count mx-4 text-3xl" />
+        <ShoppingBagIcon class="h-8 w-8 snipcart-checkout cursor-pointer" />
       </div>
-      <div>
-        Total price:
-        <span class="snipcart-total-price" />
+    </nav>
+  </div>
+  <div
+    id="product"
+    class="mx-auto max-w-2xl py-4 px-4 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+  >
+    <div class="lg:max-w-lg">
+      <RadioGroup
+        v-model="selected"
+        class="flex"
+      >
+        <RadioGroupOption
+          v-for="lang in langs"
+          :key="lang"
+          v-slot="{ checked }"
+          as="template"
+          :value="lang"
+          class="mr-4"
+        >
+          <div
+            :class="[
+              checked ? 'bg-amber-600 text-white ' : 'bg-white',
+            ]"
+            class="
+            capitalize
+            text-md
+            relative
+            flex
+            cursor-pointer
+            rounded-lg
+            px-5
+            py-4
+            shadow-md
+            focus:outline-none
+          hover:bg-amber-700 hover:text-white"
+            @click="setLanguage(lang, 
+                                lang == 'fr' ? 
+                                  {actions: { continue_shopping: 'Revenir a votre magnifique magasin override runtime' }} : 
+                                  {}
+            )"
+          >
+            <RadioGroupDescription
+              as="span"
+            >
+              <span>{{ lang }}</span>
+            </RadioGroupDescription>
+          </div>
+        </RadioGroupOption>
+      </RadioGroup>
+      <div class="mt-4">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          {{ product.data.name }} 
+        </h1>
+      </div>
+      <section
+        class="mt-4"
+      >
+        <div class="flex items-center">
+          <p class="text-lg text-gray-900 sm:text-xl">
+            {{ product.data.price }}
+          </p>
+          <div class="ml-4 border-l border-gray-300 pl-4">
+            <div class="flex items-center">
+              <div>
+                <div class="flex items-center">
+                  <StarIcon
+                    v-for="rating in [0, 1, 2, 3, 4]"
+                    :key="rating"
+                    :class="[product.data.reviews.average > rating ? 'text-yellow-400' : 'text-gray-300', 'h-5 w-5 flex-shrink-0']"
+                    aria-hidden="true"
+                  />
+                </div>
+                <p class="sr-only">
+                  {{ product.data.reviews.average }} out of 5 stars
+                </p>
+              </div>
+              <p class="ml-2 text-sm text-gray-500">
+                {{ product.data.reviews.totalCount }} reviews
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 space-y-6">
+          <p class="text-base text-gray-500">
+            {{ product.data.description }}
+          </p>
+        </div>
+        <div class="lg:col-start-1 lg:max-w-lg lg:self-start">
+          <div class="mt-10">
+            <button
+              v-bind="bindFullProduct()"
+              type="button"
+              class="
+                  snipcart-add-item
+                  flex w-full items-center justify-center rounded-md border border-transparent bg-amber-600 py-3 px-8 text-base font-medium text-white hover:bg-amber-700 focus:outline-none
+                "
+            >
+              Add to bag
+            </button>
+          </div>
+          <div class="mt-10">
+            <button
+              type="button"
+              class="flex w-full items-center justify-center rounded-md border border-transparent bg-amber-600 py-3 px-8 text-base font-medium text-white hover:bg-amber-700 focus:outline-none"
+              @click="offStore"
+            >
+              Cancel store subscibe
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
+      <div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg">
+        <img
+          :src="product.data.src"
+          :alt="product.data.alt"
+          class="h-full w-full object-cover object-center"
+        >
       </div>
     </div>
-    <button class="snipcart-checkout">
-      Click here to checkout
-    </button>
-    <!-- <button @click="loadSnipcart">
-      Load snipcart
-    </button> -->
-
-    <button @click="switchLang">
-      Switch lang
-    </button>
-
-    <button
-      class="switch-currency"
-      @click="switchCurrency('eur')"
-    >
-      Change Currency to euros
-    </button>
-    <button
-      class="switch-currency"
-      @click="switchCurrency('usd')"
-    >
-      Change Currency to dollars
-    </button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useSnipcart } from '#imports';
-import { ref } from "vue"
+import { ref, watch } from "vue"
+import { StarIcon, ShoppingBagIcon, UserCircleIcon } from '@heroicons/vue/20/solid'
+import { RadioGroup, RadioGroupDescription,  RadioGroupOption,  } from '@headlessui/vue'
 
-const snipcart = useSnipcart()
+const langs = [
+  "en",
+  "fr"
+]
 
-const lang = ref("fr")
+const selected = ref(langs[0])
+const { bindProductItemCustom, bindProductItem, setLanguage, isReady, offStore } = useSnipcart()
 
-// if you want to load snipcart manually make sure to update the options
-// const loadSnipcart = () => {
-//   snipcart.getSettings().LoadSnipcart()
-// }
-
-const switchLang = () => {
-  lang.value = lang.value === 'fr' ? 'en' : 'fr'
-  snipcart.setLanguage(lang.value)
-}
+watch(isReady, () => {
+  // snipcart.value.events.on("item.adding", () => {
+  //   console.log("article added wowo")
+  // })
+})
 
 const product = {
   data: {
-    id: 42,
-    price: 42,
-    storeUrl: 'http://localhost:3000',
-    name: 'awesome nuxt title',
-    description: 'awesome nuxt description'
+    name: 'Everyday Shoes',
+    price: 220,
+    id: 1,
+    description:
+      "Don't compromise on snack-carrying capacity with this lightweight and spacious bag. The drawstring top keeps all your favorite chips, crisps, fries, biscuits, crackers, and cookies secure.",
+    src: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=796&q=80',
+    alt: 'Model wearing light green backpack with black canvas straps and front zipper pouch.',
+    reviews: { average: 4, totalCount: 7 }
   },
-  // https://docs.snipcart.com/v3/setup/products#1-dropdown
   customFields: [
-    // dropdown
     {
-      name: 'Frame color',
-      options: 'Black|Brown|Gold'
+        "name": "Color",
+        "options": "Black|Brown|Gold"
     },
-    // text note
-    {
-      name: 'Gift note'
-    },
-    // checkbox
-    {
-      name: 'Gift',
-      type: 'checkbox'
-    },
-    // textarea
-    {
-      name: 'Long message',
-      type: 'textarea'
-    },
-    // readonly
-    {
-      name: 'Readonly information',
-      type: 'readonly',
-      value: 'This is a readonly custom field'
-    },
-    // default value
-    {
-      name: 'awesome default value',
-      options: 'Black|Brown[+100.00]|Gold[+300.00]',
-      value: 'Brown'
-    },
-    // required
-    {
-      name: 'Special comments',
-      type: 'textarea',
-      required: 'true'
-    },
-    // placeholder
-    {
-      name: 'Engraving',
-      placeholder: 'ex: John Doe'
-    }
   ]
 }
 
 
-const switchCurrency = (switchCurrency : string) => {
-  snipcart.setCurrency(switchCurrency)
-
+const bindFullProduct = () => {
+  return {
+    ...bindProductItemCustom(product.customFields),
+    ...bindProductItem(product.data)
+  }
 }
 
 </script>
