@@ -1,6 +1,6 @@
 # @nuxtjs/snipcart
 
-[![npm version](https://badge.fury.io/js/@nuxtjs%2Fsnipcart.svg)](https://badge.fury.io/js/@nuxtjs%2Fsnipcart)
+![npm version](https://img.shields.io/npm/v/@nuxtjs/snipcart?style=flat-square)
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [&nbsp;Release Notes](/CHANGELOG.md)
