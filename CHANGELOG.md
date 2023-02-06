@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v2.0.2
+
+
+### 🏡 Chore
+
+  - Adding sponsor button (34ec8ec)
+
+### ❤️  Contributors
+
+- Giraud Florent <florent giraud>
+
 ## v2.0.1
 
 
