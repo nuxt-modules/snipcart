@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v2.0.1
+
+
+### 📖 Documentation
+
+  - Update image readme (603b95f)
+  - Update image readme (4028402)
+  - Fix readme (cfe596e)
+
+### ❤️  Contributors
+
+- Giraud Florent <florent giraud>
+
 ## v2.0.0
 
 
