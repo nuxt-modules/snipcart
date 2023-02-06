@@ -5,11 +5,7 @@
 [![License][license-src]][license-href]
 [&nbsp;Release Notes](/CHANGELOG.md)
 
-
-
-<img src="https://user-images.githubusercontent.com/11556276/216852510-d80ebd68-c93d-4f0a-9495-f0400fc10d51.png" width="400" />
-
-## Help by sponsoring: <iframe src="https://github.com/sponsors/flozero/button" title="Sponsor flozero" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
+## [If you like using this module please consider sponsoring](https://github.com/sponsors/flozero)
 
 ## If you are looking for nuxt 2 version please use [1.x version](https://github.com/nuxt-community/snipcart-module/blob/master/README.md)
 
