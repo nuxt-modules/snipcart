@@ -1,4 +1,4 @@
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin } from '#imports'
 import { ModuleOptions } from '../module';
 import { useSnipcart } from './composables/useSnipcart';
 
