@@ -14,7 +14,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.hook("app:mounted", () => {
         window.SnipcartSettings = nuxtApp.$config.public.snipcart as ModuleOptions
 
-        if (!process.server) {
+        if (!import.meta.server) {
             document.addEventListener('snipcart.ready', () => {
                 const { snipcart, isReady } = useSnipcart()
                 snipcart.value = window.Snipcart

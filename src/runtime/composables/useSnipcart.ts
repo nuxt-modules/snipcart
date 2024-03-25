@@ -96,7 +96,7 @@ export const useSnipcart = () => {
      * @description use it to manually load snipcart
      */
     const load = () => {
-        if (process.server) throw("can't load snipcart on server side")
+        if (import.meta.server) throw("can't load snipcart on server side")
         window.LoadSnipcart()
     }
 
