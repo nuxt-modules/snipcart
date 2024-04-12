@@ -1,6 +1,7 @@
 export interface ValidationErrorItem {
   validation: string
   message: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   attemptedValue?: any
 }
 

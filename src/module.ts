@@ -15,6 +15,7 @@ export interface ModuleOptions {
   templatesUrl: string
   currency: string
   subscription: boolean
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   translations: any
 }
 
@@ -22,7 +23,8 @@ declare global {
   interface Window {
     SnipcartSettings: ModuleOptions
     Snipcart: SnipcartSDK
-    LoadSnipcart: Function
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    LoadSnipcart: () => any
   }
 }
 

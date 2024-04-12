@@ -31,9 +31,11 @@ export const useSnipcart = () => {
    * @param bindProductItemCustom  an Object of key value that will represent your product custom fields.
    * @returns Object data-item-custom* that you will be able to bind into html element
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const bindProductItemCustom = (bindProductItemCustom: any) => {
     const fields: Map = {}
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     bindProductItemCustom.forEach((field: any, index: string) => {
       if (typeof field !== 'object') {
         throw new TypeError('each bindProductItemCustom field should be an object')
@@ -51,6 +53,7 @@ export const useSnipcart = () => {
    * @param product an Object of key value that will represent your product.
    * @returns Object data-item-* that you will be able to bind into html element
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const bindProductItem = (product: any) => {
     const fields: Map = {}
 
@@ -58,7 +61,7 @@ export const useSnipcart = () => {
       throw new TypeError('Product should be an object')
     }
 
-    Object.keys(product).forEach((key: any) => {
+    Object.keys(product).forEach((key) => {
       fields[`data-item-${key.toString().toLowerCase()}`] = product[key]
     })
     return fields
