@@ -46,10 +46,10 @@
             shadow-md
             focus:outline-none
           hover:bg-amber-700 hover:text-white"
-            @click="setLanguage(lang, 
-                                lang == 'fr' ? 
-                                  {actions: { continue_shopping: 'Revenir a votre magnifique magasin override runtime' }} : 
-                                  {}
+            @click="setLanguage(lang,
+                                lang == 'fr'
+                                  ? { actions: { continue_shopping: 'Revenir a votre magnifique magasin override runtime' } }
+                                  : {},
             )"
           >
             <RadioGroupDescription
@@ -62,7 +62,7 @@
       </RadioGroup>
       <div class="mt-4">
         <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          {{ product.data.name }} 
+          {{ product.data.name }}
         </h1>
       </div>
       <section
@@ -136,14 +136,14 @@
 </template>
 
 <script setup lang="ts">
-import { useSnipcart } from '#imports';
-import { ref, watch } from "vue"
+import { ref, watch } from 'vue'
 import { StarIcon, ShoppingBagIcon, UserCircleIcon } from '@heroicons/vue/20/solid'
-import { RadioGroup, RadioGroupDescription,  RadioGroupOption,  } from '@headlessui/vue'
+import { RadioGroup, RadioGroupDescription, RadioGroupOption } from '@headlessui/vue'
+import { useSnipcart } from '#imports'
 
 const langs = [
-  "en",
-  "fr"
+  'en',
+  'fr',
 ]
 
 const selected = ref(langs[0])
@@ -161,25 +161,23 @@ const product = {
     price: 220,
     id: 1,
     description:
-      "Don't compromise on snack-carrying capacity with this lightweight and spacious bag. The drawstring top keeps all your favorite chips, crisps, fries, biscuits, crackers, and cookies secure.",
+      'Don\'t compromise on snack-carrying capacity with this lightweight and spacious bag. The drawstring top keeps all your favorite chips, crisps, fries, biscuits, crackers, and cookies secure.',
     src: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=796&q=80',
     alt: 'Model wearing light green backpack with black canvas straps and front zipper pouch.',
-    reviews: { average: 4, totalCount: 7 }
+    reviews: { average: 4, totalCount: 7 },
   },
   customFields: [
     {
-        "name": "Color",
-        "options": "Black|Brown|Gold"
+      name: 'Color',
+      options: 'Black|Brown|Gold',
     },
-  ]
+  ],
 }
-
 
 const bindFullProduct = () => {
   return {
     ...bindProductItemCustom(product.customFields),
-    ...bindProductItem(product.data)
+    ...bindProductItem(product.data),
   }
 }
-
 </script>
