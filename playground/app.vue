@@ -18,48 +18,50 @@
     class="mx-auto max-w-2xl py-4 px-4 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
   >
     <div class="lg:max-w-lg">
-      <RadioGroup
-        v-model="selected"
-        class="flex"
-      >
-        <RadioGroupOption
-          v-for="lang in langs"
-          :key="lang"
-          v-slot="{ checked }"
-          as="template"
-          :value="lang"
-          class="mr-4"
+      <LazyClientOnly>
+        <RadioGroup
+          v-model="selected"
+          class="flex"
         >
-          <div
-            :class="[
-              checked ? 'bg-amber-600 text-white ' : 'bg-white',
-            ]"
-            class="
-            capitalize
-            text-md
-            relative
-            flex
-            cursor-pointer
-            rounded-lg
-            px-5
-            py-4
-            shadow-md
-            focus:outline-none
-          hover:bg-amber-700 hover:text-white"
-            @click="setLanguage(lang,
-                                lang == 'fr'
-                                  ? { actions: { continue_shopping: 'Revenir a votre magnifique magasin override runtime' } }
-                                  : {},
-            )"
+          <RadioGroupOption
+            v-for="lang in langs"
+            :key="lang"
+            v-slot="{ checked }"
+            as="template"
+            :value="lang"
+            class="mr-4"
           >
-            <RadioGroupDescription
-              as="span"
+            <div
+              :class="[
+                checked ? 'bg-amber-600 text-white ' : 'bg-white',
+              ]"
+              class="
+              capitalize
+              text-md
+              relative
+              flex
+              cursor-pointer
+              rounded-lg
+              px-5
+              py-4
+              shadow-md
+              focus:outline-none
+            hover:bg-amber-700 hover:text-white"
+              @click="setLanguage(lang,
+                                  lang == 'fr'
+                                    ? { actions: { continue_shopping: 'Revenir a votre magnifique magasin override runtime' } }
+                                    : {},
+              )"
             >
-              <span>{{ lang }}</span>
-            </RadioGroupDescription>
-          </div>
-        </RadioGroupOption>
-      </RadioGroup>
+              <RadioGroupDescription
+                as="span"
+              >
+                <span>{{ lang }}</span>
+              </RadioGroupDescription>
+            </div>
+          </RadioGroupOption>
+        </RadioGroup>
+      </LazyClientOnly>
       <div class="mt-4">
         <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           {{ product.data.name }}
@@ -115,7 +117,7 @@
             <button
               type="button"
               class="flex w-full items-center justify-center rounded-md border border-transparent bg-amber-600 py-3 px-8 text-base font-medium text-white hover:bg-amber-700 focus:outline-none"
-              @click="offStore"
+              @click="handleCancelStore"
             >
               Cancel store subscibe
             </button>
@@ -136,7 +138,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { StarIcon, ShoppingBagIcon, UserCircleIcon } from '@heroicons/vue/20/solid'
 import { RadioGroup, RadioGroupDescription, RadioGroupOption } from '@headlessui/vue'
 import { useSnipcart } from '#imports'
@@ -147,13 +149,28 @@ const langs = [
 ]
 
 const selected = ref(langs[0])
-const { bindProductItemCustom, bindProductItem, setLanguage, isReady, offStore } = useSnipcart()
+const { loadSnipcart, bindProductItemCustom, bindProductItem, setLanguage, isReady, offStore, snipcart } = useSnipcart()
 
-watch(isReady, () => {
-  // snipcart.value.events.on("item.adding", () => {
-  //   console.log("article added wowo")
-  // })
+// if you manually want to load snipcart
+// watch(isReady, () => {
+//   loadSnipcart()
+// })
+
+watch(snipcart, () => {
+  // to make sure snipcart is loaded
+  if (snipcart.value) {
+    snipcart.value.events.on("item.adding", () => {
+      console.log("article added wowo")
+    })
+  }
 })
+
+const handleCancelStore = () => {
+  // this will work if snipcart is loaded and you have the settings subscription to true
+  offStore.value()
+  console.log(offStore.value)
+}
+
 
 const product = {
   data: {

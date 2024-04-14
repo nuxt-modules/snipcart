@@ -45,10 +45,11 @@ At any time please have a look at our beautiful playground example.
 
 We tried to not create too much wrapper around the Snipcart api so we don't have to maintain so much if Snipcart change. But you may found some of them useful as:
 - exposing snipcart instance
-- use of isReady boolean to watch and make sure you can use snipcart instance safely
-- realtime store subscription (working but performance hit) 
-- some function in case you are not using the JS SDK form `window.Snipcart` that will help you add html attributes that Snipcart will read on load. As bindProductItem or bindProductItemCustom
-- ability to change language or currency using respectively `setLanguage` or `setCurrency`
+- isReady will define the basic settings are ready to be used but snipcart not loaded yet
+- use watch on snipcart to make sure its ready
+- realtime store subscription
+- utils functions As bindProductItem or bindProductItemCustom
+- wrapper utils function to change language or currency using respectively `setLanguage` or `setCurrency`
 
 As we have a full typescript support play with it and read the description of what is exposed.
 
@@ -56,13 +57,21 @@ As we have a full typescript support play with it and read the description of wh
 
 We are following Snipcart [different loadings](https://docs.snipcart.com/v3/setup/installation). You can control the load of the js using `loadStrategy` configuration property. You can tell snipcart to not load css using `loadCSS` config property.
 
-If you load async take in consideration on server or client you will not have access to `window.Snipcart` or `snipcart` exposed by `useSnipcart` until its loaded. So adapt your logic
+If you load async take in consideration you will not have access to `window.Snipcart` or `snipcart` exposed by `useSnipcart` until its loaded. So adapt your logic. Check on playground we have added few comments
 
 ## [Customization](https://docs.snipcart.com/v3/setup/customization)
 
 With nuxt it is super easy to customize snipart components. Use your own class css in addition of custom html to override [snipcart component](https://docs.snipcart.com/v3/themes/default/reference).
 
 To do that create for example `public/snipcart-custom.html` as inside the playground. And make sure you add the path in the nuxt config using `templatesUrl` property
+
+```
+ snipcart: {
+    templatesUrl: '/snipcart-custom.html',
+```
+
+this will after be passed to snipcart to understand what file to retrieve to have access to all templates it will use to build snipcart components
+
 
 ## [Snipcart SDK](https://docs.snipcart.com/v3/sdk/basics)
 
@@ -72,26 +81,23 @@ As we told before we expose the snipcart SDK as by default with window.Snipcart 
 
 ```bash
 # Install dependencies
-npm install
-
-# Generate type stubs
-npm run dev:prepare
+pnpm install
 
 # Develop with the playground
-npm run dev
+pnpm dev
 
 # Build the playground
-npm run dev:build
+pnpm dev:build
 
 # Run ESLint
-npm run lint
+pnpm lint
 
 # Run Vitest
-npm run test
-npm run test:watch
+pnpm test
+pnpm test:watch
 
 # Release new version
-npm run release
+pnpm release
 ```
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/snipcart/next.svg?style=flat&colorA=18181B&colorB=28CF8D
