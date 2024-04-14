@@ -1,5 +1,13 @@
 {
   "private": true,
   "name": "@nuxtjs/snipcart-playground",
-  "devDependencies": {}
+  "type": "module",
+  "devDependencies": {
+    "nuxt": "latest",
+    "@headlessui/vue": "^1.7.19",
+    "@heroicons/vue": "^2.0.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4",
+    "@tailwindcss/aspect-ratio": "^0.4.2"
+  }
 }
