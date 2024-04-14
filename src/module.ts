@@ -1,5 +1,5 @@
+import { fileURLToPath } from 'node:url'
 import { defineNuxtModule, createResolver } from '@nuxt/kit'
-import { fileURLToPath } from 'url'
 import defu from 'defu'
 
 import type { SnipcartSDK } from './types'
@@ -18,14 +18,14 @@ export interface ModuleOptions {
   templatesUrl: string
   currency: string
   subscription: boolean
-  translations: any
+  translations: Record<string, unknown>
 }
 
 declare global {
   interface Window {
     SnipcartSettings: ModuleOptions
     Snipcart: SnipcartSDK
-    LoadSnipcart: () => any
+    LoadSnipcart: () => void
   }
 }
 
@@ -53,7 +53,7 @@ export default defineNuxtModule<ModuleOptions>({
     subscription: false,
     translations: {},
   },
-  async setup(options, nuxt) {
+  async setup(options: ModuleOptions, nuxt) {
     if (!options.publicApiKey.length) {
       throw new Error('publicApiKey cant be null')
     }
@@ -64,16 +64,17 @@ export default defineNuxtModule<ModuleOptions>({
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
 
-    nuxt.hook('imports:dirs', (dirs) => {
+    nuxt.hook('imports:dirs', (dirs: string[]) => {
       dirs.push(resolve(runtimeDir, 'composables'))
     })
 
-    nuxt.hook('nitro:config', (nitroConfig) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    nuxt.hook('nitro:config', (nitroConfig: any) => {
       nitroConfig.alias = nitroConfig.alias || {}
 
       // Inline module runtime in Nitro bundle
       nitroConfig.externals = defu(typeof nitroConfig.externals === 'object' ? nitroConfig.externals : {}, {
-        inline: [resolve('./runtime')]
+        inline: [resolve('./runtime')],
       })
     })
   },

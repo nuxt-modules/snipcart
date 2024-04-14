@@ -138,8 +138,11 @@
 </template>
 
 <script setup lang="ts">
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ref, watch, onMounted } from 'vue'
 import { StarIcon, ShoppingBagIcon, UserCircleIcon } from '@heroicons/vue/20/solid'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
+// @ts-ignore
 import { RadioGroup, RadioGroupDescription, RadioGroupOption } from '@headlessui/vue'
 import { useSnipcart } from '#imports'
 
@@ -149,6 +152,7 @@ const langs = [
 ]
 
 const selected = ref(langs[0])
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { loadSnipcart, bindProductItemCustom, bindProductItem, setLanguage, isReady, offStore, snipcart } = useSnipcart()
 
 // if you manually want to load snipcart
@@ -159,8 +163,8 @@ const { loadSnipcart, bindProductItemCustom, bindProductItem, setLanguage, isRea
 watch(snipcart, () => {
   // to make sure snipcart is loaded
   if (snipcart.value) {
-    snipcart.value.events.on("item.adding", () => {
-      console.log("article added wowo")
+    snipcart.value.events.on('item.adding', () => {
+      console.log('article added wowo')
     })
   }
 })
@@ -170,7 +174,6 @@ const handleCancelStore = () => {
   offStore.value()
   console.log(offStore.value)
 }
-
 
 const product = {
   data: {

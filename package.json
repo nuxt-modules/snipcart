@@ -31,7 +31,7 @@
     "defu": "^6.1.4"
   },
   "devDependencies": {
-    "@headlessui/vue": "^1.7.9",
+    "@headlessui/vue": "^1.7.19",
     "@heroicons/vue": "^2.0.14",
     "@nuxt/eslint-config": "^0.3.6",
     "@nuxt/module-builder": "^0.5.4",

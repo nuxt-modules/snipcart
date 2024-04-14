@@ -14,7 +14,7 @@ dependencies:
 
 devDependencies:
   '@headlessui/vue':
-    specifier: ^1.7.9
+    specifier: ^1.7.19
     version: 1.7.19(vue@3.4.21)
   '@heroicons/vue':
     specifier: ^2.0.14
