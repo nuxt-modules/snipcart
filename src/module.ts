@@ -53,7 +53,7 @@ export default defineNuxtModule<ModuleOptions>({
     subscription: false,
     translations: {},
   },
-  async setup(options: ModuleOptions, nuxt) {
+  async setup(options: ModuleOptions, nuxt: any) {
     if (!options.publicApiKey.length) {
       throw new Error('publicApiKey cant be null')
     }
