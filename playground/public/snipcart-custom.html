@@ -1,13 +1,13 @@
 <div id="snipcart-templates">
-    <button-primary>
-        <base-button
-            class="rounded-md border border-transparent bg-amber-600 py-3 px-8 text-base font-medium text-white hover:bg-amber-700 focus:outline-none"
-            v-bind="{ ...$props, ...$attrs }"
-            v-on="$listeners"
-        >
-            <template v-for="(value, name) in $slots" v-slot:[name]>
-                <slot :name="name"></slot>
-            </template>
-        </base-button>
-    </button-primary>
+  <button-primary>
+      <base-button
+          class="rounded-md border border-transparent bg-amber-600 py-3 px-8 text-base font-medium text-white hover:bg-amber-700 focus:outline-none"
+          v-bind="{ ...$props, ...$attrs }"
+          v-on="$listeners"
+      >
+          <template v-for="(value, name) in $slots" v-slot:[name]>
+              <slot :name="name"></slot>
+          </template>
+      </base-button>
+  </button-primary>
 </div>

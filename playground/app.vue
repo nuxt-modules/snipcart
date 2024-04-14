@@ -18,51 +18,53 @@
     class="mx-auto max-w-2xl py-4 px-4 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
   >
     <div class="lg:max-w-lg">
-      <RadioGroup
-        v-model="selected"
-        class="flex"
-      >
-        <RadioGroupOption
-          v-for="lang in langs"
-          :key="lang"
-          v-slot="{ checked }"
-          as="template"
-          :value="lang"
-          class="mr-4"
+      <LazyClientOnly>
+        <RadioGroup
+          v-model="selected"
+          class="flex"
         >
-          <div
-            :class="[
-              checked ? 'bg-amber-600 text-white ' : 'bg-white',
-            ]"
-            class="
-            capitalize
-            text-md
-            relative
-            flex
-            cursor-pointer
-            rounded-lg
-            px-5
-            py-4
-            shadow-md
-            focus:outline-none
-          hover:bg-amber-700 hover:text-white"
-            @click="setLanguage(lang, 
-                                lang == 'fr' ? 
-                                  {actions: { continue_shopping: 'Revenir a votre magnifique magasin override runtime' }} : 
-                                  {}
-            )"
+          <RadioGroupOption
+            v-for="lang in langs"
+            :key="lang"
+            v-slot="{ checked }"
+            as="template"
+            :value="lang"
+            class="mr-4"
           >
-            <RadioGroupDescription
-              as="span"
+            <div
+              :class="[
+                checked ? 'bg-amber-600 text-white ' : 'bg-white',
+              ]"
+              class="
+              capitalize
+              text-md
+              relative
+              flex
+              cursor-pointer
+              rounded-lg
+              px-5
+              py-4
+              shadow-md
+              focus:outline-none
+            hover:bg-amber-700 hover:text-white"
+              @click="setLanguage(lang,
+                                  lang == 'fr'
+                                    ? { actions: { continue_shopping: 'Revenir a votre magnifique magasin override runtime' } }
+                                    : {},
+              )"
             >
-              <span>{{ lang }}</span>
-            </RadioGroupDescription>
-          </div>
-        </RadioGroupOption>
-      </RadioGroup>
+              <RadioGroupDescription
+                as="span"
+              >
+                <span>{{ lang }}</span>
+              </RadioGroupDescription>
+            </div>
+          </RadioGroupOption>
+        </RadioGroup>
+      </LazyClientOnly>
       <div class="mt-4">
         <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          {{ product.data.name }} 
+          {{ product.data.name }}
         </h1>
       </div>
       <section
@@ -115,7 +117,7 @@
             <button
               type="button"
               class="flex w-full items-center justify-center rounded-md border border-transparent bg-amber-600 py-3 px-8 text-base font-medium text-white hover:bg-amber-700 focus:outline-none"
-              @click="offStore"
+              @click="handleCancelStore"
             >
               Cancel store subscibe
             </button>
@@ -136,24 +138,39 @@
 </template>
 
 <script setup lang="ts">
-import { useSnipcart } from '#imports';
-import { ref, watch } from "vue"
+import { ref, watch, onMounted } from 'vue'
 import { StarIcon, ShoppingBagIcon, UserCircleIcon } from '@heroicons/vue/20/solid'
-import { RadioGroup, RadioGroupDescription,  RadioGroupOption,  } from '@headlessui/vue'
+import { RadioGroup, RadioGroupDescription, RadioGroupOption } from '@headlessui/vue'
+import { useSnipcart } from '#imports'
 
 const langs = [
-  "en",
-  "fr"
+  'en',
+  'fr',
 ]
 
 const selected = ref(langs[0])
-const { bindProductItemCustom, bindProductItem, setLanguage, isReady, offStore } = useSnipcart()
+const { loadSnipcart, bindProductItemCustom, bindProductItem, setLanguage, isReady, offStore, snipcart } = useSnipcart()
 
-watch(isReady, () => {
-  // snipcart.value.events.on("item.adding", () => {
-  //   console.log("article added wowo")
-  // })
+// if you manually want to load snipcart
+// watch(isReady, () => {
+//   loadSnipcart()
+// })
+
+watch(snipcart, () => {
+  // to make sure snipcart is loaded
+  if (snipcart.value) {
+    snipcart.value.events.on("item.adding", () => {
+      console.log("article added wowo")
+    })
+  }
 })
+
+const handleCancelStore = () => {
+  // this will work if snipcart is loaded and you have the settings subscription to true
+  offStore.value()
+  console.log(offStore.value)
+}
+
 
 const product = {
   data: {
@@ -161,25 +178,23 @@ const product = {
     price: 220,
     id: 1,
     description:
-      "Don't compromise on snack-carrying capacity with this lightweight and spacious bag. The drawstring top keeps all your favorite chips, crisps, fries, biscuits, crackers, and cookies secure.",
+      'Don\'t compromise on snack-carrying capacity with this lightweight and spacious bag. The drawstring top keeps all your favorite chips, crisps, fries, biscuits, crackers, and cookies secure.',
     src: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=796&q=80',
     alt: 'Model wearing light green backpack with black canvas straps and front zipper pouch.',
-    reviews: { average: 4, totalCount: 7 }
+    reviews: { average: 4, totalCount: 7 },
   },
   customFields: [
     {
-        "name": "Color",
-        "options": "Black|Brown|Gold"
+      name: 'Color',
+      options: 'Black|Brown|Gold',
     },
-  ]
+  ],
 }
-
 
 const bindFullProduct = () => {
   return {
     ...bindProductItemCustom(product.customFields),
-    ...bindProductItem(product.data)
+    ...bindProductItem(product.data),
   }
 }
-
 </script>
