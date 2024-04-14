@@ -1,6 +1,6 @@
-import type { ModuleOptions } from '../module'
-import { useSnipcart } from './composables/useSnipcart'
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin } from '#imports'
+import { ModuleOptions } from '../module';
+import { useSnipcart } from './composables/useSnipcart';
 
 /**
  * @description this code is coming from snipcart https://docs.snipcart.com/v3/setup/installation

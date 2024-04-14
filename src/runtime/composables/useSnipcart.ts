@@ -1,7 +1,7 @@
-import { watch } from 'vue'
-import cloneDeep from 'lodash-es/cloneDeep'
-import type { SnipcartSDK } from '../../types'
-import { useNuxtApp, useState } from '#app'
+import { useNuxtApp, useState } from "#imports"
+import { watch } from "vue"
+import cloneDeep from "lodash-es/cloneDeep"
+import { SnipcartSDK } from "../../types"
 
 interface Map {
   [key: string]: string
