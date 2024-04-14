@@ -20,14 +20,7 @@
 1. Add `@nuxtjs/snipcart` dependency to your project
 
 ```bash
-# Using pnpm
-pnpm add -D @nuxtjs/snipcart
-
-# Using yarn
-yarn add --dev @nuxtjs/snipcart
-
-# Using npm
-npm install --save-dev @nuxtjs/snipcart
+npx nuxi@latest module add snipcart
 ```
 
 2. Add `@nuxtjs/snipcart` to the `modules` section of `nuxt.config.ts`
