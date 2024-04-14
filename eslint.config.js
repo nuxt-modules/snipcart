@@ -1,3 +1,3 @@
 export default {
-    "extends": ["@nuxt/eslint-config"]
+    "extends": "@nuxt/eslint-config"
 }
