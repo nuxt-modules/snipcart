@@ -1,7 +1,7 @@
 {
   "name": "@nuxtjs/snipcart",
-  "version": "2.0.2",
-  "description": "My new Nuxt module",
+  "version": "3.0.0",
+  "description": "Nuxt module for Snipcart",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -27,17 +27,19 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.1.1",
-    "lodash-es": "^4.17.21"
+    "@nuxt/kit": "^3.11.2",
+    "defu": "^6.1.4"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.1.1",
-    "@nuxt/module-builder": "^0.2.1",
-    "@nuxt/schema": "^3.1.1",
-    "@nuxt/test-utils": "^3.1.1",
-    "changelogen": "^0.4.1",
-    "eslint": "^8.33.0",
-    "nuxt": "^3.1.1",
-    "vitest": "^0.28.3"
-  }
+    "@nuxt/eslint-config": "^0.3.6",
+    "@nuxt/module-builder": "^0.5.4",
+    "@nuxt/schema": "^3.11.2",
+    "@nuxt/test-utils": "^3.12.0",
+    "autoprefixer": "^10.4.13",
+    "changelogen": "^0.5.5",
+    "eslint": "^8.57.0",
+    "nuxt": "^3.11.2",
+    "vitest": "^1.5.0"
+  },
+  "packageManager": "pnpm@8.15.4+sha256.cea6d0bdf2de3a0549582da3983c70c92ffc577ff4410cbf190817ddc35137c2"
 }

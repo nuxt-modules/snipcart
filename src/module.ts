@@ -1,5 +1,8 @@
-import { defineNuxtModule, addPlugin, createResolver, addImportsDir } from '@nuxt/kit'
-import { SnipcartSDK } from './types'
+import { fileURLToPath } from 'node:url'
+import { defineNuxtModule, createResolver } from '@nuxt/kit'
+import defu from 'defu'
+
+import type { SnipcartSDK } from './types'
 
 export interface ModuleOptions {
   version: string
@@ -8,21 +11,21 @@ export interface ModuleOptions {
   domain: string
   protocol: string
   loadCSS: boolean
-  loadStrategy: "" | "on-user-interaction" | "manual"
-  addProductBehavior: "" | "none"
-  modalStyle: "" | "side",
-  language: string,
-  templatesUrl: string,
+  loadStrategy: '' | 'on-user-interaction' | 'manual'
+  addProductBehavior: '' | 'none'
+  modalStyle: '' | 'side'
+  language: string
+  templatesUrl: string
   currency: string
-  subscription: boolean,
-  translations: any
+  subscription: boolean
+  translations: Record<string, unknown>
 }
 
 declare global {
-  interface Window { 
+  interface Window {
     SnipcartSettings: ModuleOptions
     Snipcart: SnipcartSDK
-    LoadSnipcart: Function
+    LoadSnipcart: () => void
   }
 }
 
@@ -31,36 +34,48 @@ export default defineNuxtModule<ModuleOptions>({
     name: '@nuxtjs/snipcart',
     configKey: 'snipcart',
     compatibility: {
-      nuxt: '>=3.0.0'
-    }
+      nuxt: '>=3.0.0',
+    },
   },
   defaults: {
     version: '3.0',
-    publicApiKey: "",
+    publicApiKey: '',
     timeoutDuration: 2750,
-    domain: "cdn.snipcart.com",
-    protocol: "https",
+    domain: 'cdn.snipcart.com',
+    protocol: 'https',
     loadCSS: true,
-    loadStrategy: "",
-    addProductBehavior: "",
-    modalStyle: "",
-    language: "en",
-    templatesUrl: "",
-    currency: "usd",
+    loadStrategy: '',
+    addProductBehavior: '',
+    modalStyle: '',
+    language: 'en',
+    templatesUrl: '',
+    currency: 'usd',
     subscription: false,
-    translations: {}
+    translations: {},
   },
-  async setup(options, nuxt) {
-
+  async setup(options: ModuleOptions, nuxt: any) {
     if (!options.publicApiKey.length) {
-      throw new Error("publicApiKey cant be null")
+      throw new Error('publicApiKey cant be null')
     }
 
     nuxt.options.runtimeConfig.public.snipcart = options
 
-    const resolver = createResolver(import.meta.url)
-    
-    addPlugin(resolver.resolve('./runtime/plugin'))
-    addImportsDir(resolver.resolve('./runtime/composables'))
-  }
+    const { resolve } = createResolver(import.meta.url)
+    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
+    nuxt.options.build.transpile.push(runtimeDir)
+
+    nuxt.hook('imports:dirs', (dirs: string[]) => {
+      dirs.push(resolve(runtimeDir, 'composables'))
+    })
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    nuxt.hook('nitro:config', (nitroConfig: any) => {
+      nitroConfig.alias = nitroConfig.alias || {}
+
+      // Inline module runtime in Nitro bundle
+      nitroConfig.externals = defu(typeof nitroConfig.externals === 'object' ? nitroConfig.externals : {}, {
+        inline: [resolve('./runtime')],
+      })
+    })
+  },
 })
